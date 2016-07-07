@@ -4,8 +4,7 @@ app.directive("post", function() {
     restrict: 'E',
     scope: {
       p: '=',
-      index: '=',
-      hideButton: '='
+      index: '='
     },
     templateUrl: 'assets/js/directives/post.html'
 }})
