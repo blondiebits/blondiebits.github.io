@@ -1,20 +1,31 @@
 <!-- Main -->
 <div id="main">
 
-	<!-- Post -->
+
+	<!-- Intro -->
+	<section id="intro">
+		<a href="/" class="logo"><img src="images/logo.jpg" alt="" /></a>
+		<header>
+			<h2>Blondiebits</h2>
+			<p>A series of written and filmed tutorials for new technologies that have confusing documentation</p>
+		</header>
+	</section>
+
+	<!-- Post #/{{$index}}-->
+	<div ng-repeat="p in posts">
 	<article class="post">
 		<header>
 			<div class="title">
-				<h2><a href="#">Create a webpage in 5 minutes</a></h2>
-				<p>Learn the basics of HTML for your first webpage in  5 minutes.</p>
+				<h2><a href="#/{{$index}}"> {{ p.title }}</a></h2>
+				<p> {{ p.subtitle }}</p>
 			</div>
 			<div class="meta">
-				<time class="published" datetime="2015-11-01">July 8, 2016</time>
-				<a href="#" class="author"><span class="name">Kathryn Hodge</span><img src="images/avatar.jpg" alt="" /></a>
+				<time class="published" datetime="2015-11-01"> {{ p.date }}</time>
+				<a href="#" class="author"><span class="name">{{ p.author }}</span><img src="images/avatar.jpg" alt="" /></a>
 			</div>
 		</header>
 		<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-		<p>Let’s create a webpage in 5 minutes. First, get a text-editor. I’m using Sublime, which you can download <a href="http://www.sublimetext.com/2">here</a>, but others include TextEdit (with plain text) and Atom. Now, we’ll create an index.html file. Notice the extension - it's html because we are writing html. HTML stands for Hyper Text Markup Language and it’s something we can use to code up a quick webpage. With our index.html file open in our text editor, we'll write some boilerplate code. </p>
+		<p>Let’s create a webpage in 5 minutes. First, get a text-editor. I’m using Sublime, which you can download at http://www.sublimetext.com/, but others include TextEdit (with plain text) and Atom. Now, we’ll create an index.html file. Notice the extension - it's html because we are writing html. HTML stands for Hyper Text Markup Language and it’s something we can use to code up a quick webpage. With our index.html file open in our text editor, we'll write some boilerplate code. </p>
 
 		<!-- image-->
 
@@ -24,134 +35,73 @@
 
 		<footer>
 			<ul class="actions">
-				<li><a href="#" class="button big">Continue Reading</a></li>
+				<li><a href="#/0" class="button big">Continue Reading</a></li>
 			</ul>
-			<ul class="stats">
-				<li><a href="#">General</a></li>
-										<!-- <li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li> -->
-									</ul>
-								</footer>
-							</article>
+			<!-- <ul class="stats"> -->
+			<!-- <li><a href="#">General</a></li>-->
+			<!-- <li><a href="#" class="icon fa-heart">28</a></li>
+			<li><a href="#" class="icon fa-comment">128</a></li> -->
+			<!-- </ul>-->
+		</footer>
+	</article>
+	</div>
 
-							<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">Ultricies sed magna euismod enim vitae gravida</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+							<!-- Sidebar -->
+							<section id="sidebar">
+
+								<!-- Mini Posts -->
+								<section>
+									<div class="mini-posts">
+
+										<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Vitae sed condimentum</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+										</article>
+
+										<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Rutrum neque accumsan</a></h3>
+												<time class="published" datetime="2015-10-19">October 19, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+										</article>
+
+										<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Odio congue mattis</a></h3>
+												<time class="published" datetime="2015-10-18">October 18, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+										</article>
+
+										<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Enim nisl veroeros</a></h3>
+												<time class="published" datetime="2015-10-17">October 17, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										</article>
+
 									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-10-25">October 25, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.</p>
-								<footer>
+								</section>
+								<!-- About -->
+								<section class="blurb">
+									<h2>About me</h2>
+									<p>Computer science major.<br>Film minor. <br>Vassar College '17. <br>Vanilla Lattes<br>Tap Dancing</p>
 									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
+										<li><a href="#" class="button">Learn More</a></li>
 									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
+								</section>
 
-							<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">Euismod et accumsan</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-10-22">October 22, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Cras vehicula tellus eu ligula viverra, ac fringilla turpis suscipit. Quisque vestibulum rhoncus ligula.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-						</div>
-
-						<!-- Sidebar -->
-						<section id="sidebar">
-
-							<!-- Intro -->
-							<section id="intro">
-								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
-								<header>
-									<h2>Blondiebits</h2>
-									<p>A series of written and filmed tutorials for new technologies that have confusing documentation</p>
-								</header>
 							</section>
-
-							<!-- Mini Posts -->
-							<section>
-								<div class="mini-posts">
-
-									<!-- Mini Post -->
-									<article class="mini-post">
-										<header>
-											<h3><a href="#">Vitae sed condimentum</a></h3>
-											<time class="published" datetime="2015-10-20">October 20, 2015</time>
-											<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-										</header>
-										<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-									</article>
-
-									<!-- Mini Post -->
-									<article class="mini-post">
-										<header>
-											<h3><a href="#">Rutrum neque accumsan</a></h3>
-											<time class="published" datetime="2015-10-19">October 19, 2015</time>
-											<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-										</header>
-										<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-									</article>
-
-									<!-- Mini Post -->
-									<article class="mini-post">
-										<header>
-											<h3><a href="#">Odio congue mattis</a></h3>
-											<time class="published" datetime="2015-10-18">October 18, 2015</time>
-											<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-										</header>
-										<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-									</article>
-
-									<!-- Mini Post -->
-									<article class="mini-post">
-										<header>
-											<h3><a href="#">Enim nisl veroeros</a></h3>
-											<time class="published" datetime="2015-10-17">October 17, 2015</time>
-											<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-										</header>
-										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-									</article>
-
-								</div>
-							</section>
-							<!-- About -->
-							<section class="blurb">
-								<h2>About me</h2>
-								<p>Computer science major.<br>Film minor. <br>Vassar College '17. <br>Vanilla Lattes<br>Tap Dancing</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</section>
-
-						</section>

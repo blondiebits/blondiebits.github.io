@@ -6,8 +6,8 @@ app.config(function ($routeProvider) {
       controller: 'HomeController', 
       templateUrl: 'assets/views/home.html' 
     }) 
-    .when('/single/', {
-    	controller: 'SingleItemController.js',
+    .when('/:id', {
+    	controller: 'SingleItemController',
     	templateUrl: 'assets/views/singleItem.html'
     })
     .otherwise({ 
