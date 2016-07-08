@@ -1,0 +1,24 @@
+{
+  "name": "blondiebits",
+  "version": "1.0.0",
+  "private": false,
+  "author": "kathryn-hodge",
+  "devDependencies": {},
+  "engines": {
+    "node": "5.1.0",
+    "npm": "3.4.1"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "1.7.1",
+    "express": "^4.13.3",
+    "request": "^2.72.0"
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ]
+}
