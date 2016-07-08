@@ -1,28 +1,30 @@
 	<article class="post">
 		<header>
 			<div class="title">
-				<h2><a href="#/{{index}}"> {{ p.title }}</a></h2>
+				<h2><a href="#/{{i}}"> {{ p.title }}</a></h2>
 				<p> {{ p.subtitle }}</p>
 			</div>
 			<div class="meta">
 				<time class="published" datetime="2015-11-01"> {{ p.date }}</time>
-				<a href="#" class="author"><span class="name">{{ p.author }}</span><img src="images/avatar.jpg" alt="" /></a>
+				<a href="#" class="author"><span class="name">{{ p.author }}</span><img ng-src="{{ p.author_image }}" alt="" /></a>
 			</div>
 		</header>
-		<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 		<!-- figure out a way to iterate through content; also adding limit -->
+		<div ng-repeat="para_context in p.paragraph_context">
+			<a href="#" class="image featured"><img ng-src=" {{ p.images[$index] }} " alt="" /></a>
+			<div ng-repeat="para in para_context">
+				<p>{{ para_context[$index] }}</p>
+			</div>
+		</div>
 		
-		<p>Let’s create a webpage in 5 minutes. First, get a text-editor. I’m using Sublime, which you can download at http://www.sublimetext.com/, but others include TextEdit (with plain text) and Atom. Now, we’ll create an index.html file. Notice the extension - it's html because we are writing html. HTML stands for Hyper Text Markup Language and it’s something we can use to code up a quick webpage. With our index.html file open in our text editor, we'll write some boilerplate code. </p>
 
 		<!-- image-->
-
-		<p>This is code we have to write to define this file as an HTML file. Nearly everything in HTML is written with tags (those right and left arrow brackets) - why is this? Well it’s just the way the language is written. For the HTML tag, we have an opening tag and a closing tag, but this is not necessarily true for all tags. Now, we'll write some more code...</p>
 
 		<!-- <div ng-hide="{{ hideButton }}"> -->
 			<footer>
 			<ul class="actions">
 				<!-- figure out a way to change button text "Next Article, etc" and change the url (mod num of articles)-->
-				<li><a href="#/{{index}}" class="button big">Continue Reading</a></li>
+				<li><a href="#/{{i}}" class="button big">Continue Reading</a></li>
 			</ul>
 			</footer>
 		<!-- </div> -->
