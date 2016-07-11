@@ -5,7 +5,7 @@ app.directive("htmlone", function() {
     scope: {
       p: '=',
       i: '=',
-      hideorshow: '='
+      hideorshow: '=',
     },
     templateUrl: 'assets/js/directives/htmlOne.html'
 }})
