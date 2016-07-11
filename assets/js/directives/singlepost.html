@@ -1,0 +1,32 @@
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2><a href="#/{{i}}"> {{ p.title }}</a></h2>
+				<p> {{ p.subtitle }}</p>
+			</div>
+			<div class="meta">
+				<time class="published" datetime="2015-11-01"> {{ p.date }}</time>
+				<a href="#" class="author"><span class="name">{{ p.author }}</span><img ng-src="{{ p.author_image }}" alt="" /></a>
+			</div>
+		</header>
+
+		<htmlone p= "p" i="$i" hideorshow="visible"></htmlone>
+<!-- 		<div ng-repeat="para_context in p.paragraph_context">
+			<a href="#" class="image featured"><img ng-src=" {{ p.images[$index] }} " alt="" /></a>
+			<div ng-repeat="para in para_context">
+				<p>{{ para_context[$index] }}</p>
+			</div>
+		</div> -->
+
+		<!-- image-->
+
+		<!-- <div ng-hide="{{ hideButton }}"> -->
+<!-- 			<footer>
+			<ul class="actions">
+				// figure out a way to change button text "Next Article, etc" and change the url (mod num of articles)
+				<li><a href="#/" class="button big">Back</a></li>
+			</ul>
+			</footer> -->
+		<!-- </div> -->
+		
+	</article>

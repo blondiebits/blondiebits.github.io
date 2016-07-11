@@ -9,24 +9,13 @@
 				<a href="#" class="author"><span class="name">{{ p.author }}</span><img ng-src="{{ p.author_image }}" alt="" /></a>
 			</div>
 		</header>
-		<!-- figure out a way to iterate through content; also adding limit -->
-		<div ng-repeat="para_context in p.paragraph_context">
-			<a href="#" class="image featured"><img ng-src=" {{ p.images[$index] }} " alt="" /></a>
-			<div ng-repeat="para in para_context">
-				<p>{{ para_context[$index] }}</p>
-			</div>
-		</div>
-		
 
-		<!-- image-->
+		<htmlone p= "p" i="$i" hideorshow="hidden"></htmlone>
 
-		<!-- <div ng-hide="{{ hideButton }}"> -->
 			<footer>
 			<ul class="actions">
-				<!-- figure out a way to change button text "Next Article, etc" and change the url (mod num of articles)-->
 				<li><a href="#/{{i}}" class="button big">Continue Reading</a></li>
 			</ul>
 			</footer>
-		<!-- </div> -->
 		
 	</article>
