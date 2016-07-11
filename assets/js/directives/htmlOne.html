@@ -1,61 +1,11 @@
-<!-- figure out a way to iterate through content; also adding limit -->
-<!-- 		<div ng-repeat="para_context in p.paragraph_context |limitTo:2">
-			<a href="#" class="image featured"><img ng-src=" {{ p.images[$index] }} " alt="" /></a>
-			<div ng-repeat="para in para_context">
-				<p>{{ para_context[$index] }}</p>
-			</div>
-		</div> -->
-<style>
-  	#hidden-from-you p{
-    display:none;
 
-	}
+<style>
+
+.hidden-from-you p{
+	display:none;
+}
+
+
 </style>
 
-		<p>Let’s create a webpage in 5 minutes. First, get a text-editor. I’m using Sublime, which you can download at sublimetext.com, but others include TextEdit (with plain text) and Atom. Now, we’ll create an index.html file. Notice the extension - it's html because we are writing html. HTML stands for Hyper Text Markup Language and it’s something we can use to code up a quick webpage. With our index.html file open in our text editor, we'll write some boilerplate code. </p>
-
-
-		<p>This is code we have to write to define this file as an HTML file. Nearly everything in HTML is written with tags (those right and left arrow brackets). Why is this? Well it’s just the way the language is written. For HTML tags, we usually have an opening tag and a closing tag, but this is not necessarily true for all tags. Now, we'll write some more code…</p>
-
-		<p>We just added a head tag and a body tag. Here, the head holds the metadata of the application and the body holds our actual content. Now let’s see what this code does. To do this, we left-click on our file and open the file with a browser (instead of a text-editor.</p>
-
-<div ng-attr-id= "{{ hideorshow }}">
-		<p>This should pull up an empty screen. Why is that? It’s because our body tag doesn’t have anything in it! We need to add some real content. We can add a header tag with the text "Hello World".</p>
-
-		<p>Here, the h1 tag is a header tag. We can also create h2, h3, all the way up to h6 tags. The only difference between the headers is size. The h1 tag creates the biggest header and the h6 tag creates the smallest header.</p>
-
-		<p>If we open the file with a browser, then we should have a webpage with the text Hello World. If your page doesn't have anything on it, make sure you have saved your file after adding the h1 tag because the browser will only show what has been saved.</p>
-
-
-		<p>Now, we'll add a quick h3 tag with the text "blue"and see what happens.</p>
-
-		<p>And we see what we were expecting. The header with the text "blue" is smaller than the header with the text "Hello World". </p>
-
-		<p>So we have headers, what about other content? Well we can add some paragraph text with a p tag (also called a <b>p element</b>).
-
-<!-- 		// no image -->
-
-		<p>We can also add an image with an image tag. Below, src is an attribute of the image tag and it's where we specify the source of the image. Now, I don't know about you, but I love coffee so I'm using a coffee image but feel free to add whatever picture you'd like. </p>
-
-		<p>And we'll open this up in the browser to see what it looks like.</p>
-
-		<p>Great! We have some headers, paragraph text, and an image. Now, we might want to add some extra space between the image and paragraph tag so we can write some br tags to do this.</p>
-
-		<p>Opening this up in the browser, we see there\'s now quite a bit of space between the paragraph and the image. Now, this webpage isn't the prettiest. Can we make it prettier? YES! With CSS. HTML defines the core content of a webpage and CSS allows us to add design. You\'ll learn all about CSS in next week\'s post! See you then.</p>
-
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-	<!-- only removes if the div id is hidden -->
-	<script>
-	$(document).ready(function(){
-		$( "#hidden" ).append( "<p>Test</p>" );
-        $("#hidden2").remove();
-	});
-
-
-	// $(window).load(function(){ $("#hidden2").remove(); });
-
-
-	</script>
+<div ng-include="'assets/js/directives/article{{i}}.html'"></div>
