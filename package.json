@@ -9,14 +9,10 @@
     "npm": "3.4.1"
   },
   "scripts": {
-    "test": "grunt test",
-    "postinstall": "bower install"
+    "start" : "node server.js"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "bower": "1.7.1",
-    "express": "^4.13.3",
-    "request": "^2.72.0"
+    "express": "4.13.3"
   },
   "cacheDirectories": [
     "node_modules"
