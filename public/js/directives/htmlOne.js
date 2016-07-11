@@ -7,5 +7,5 @@ app.directive("htmlone", function() {
       i: '=',
       hideorshow: '=',
     },
-    templateUrl: 'assets/js/directives/htmlOne.html'
+    templateUrl: 'js/directives/htmlOne.html'
 }})

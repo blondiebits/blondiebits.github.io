@@ -6,5 +6,5 @@ app.directive("mainpost", function() {
       p: '=',
       i: '='
     },
-    templateUrl: 'assets/js/directives/mainpost.html'
+    templateUrl: 'js/directives/mainpost.html'
 }})

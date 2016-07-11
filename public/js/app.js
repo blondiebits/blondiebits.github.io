@@ -4,11 +4,11 @@ app.config(function ($routeProvider) {
   $routeProvider 
     .when('/', { 
       controller: 'HomeController', 
-      templateUrl: 'assets/views/home.html' 
+      templateUrl: 'views/home.html' 
     }) 
     .when('/:id', {
     	controller: 'SingleItemController',
-    	templateUrl: 'assets/views/singleItem.html'
+    	templateUrl: 'views/singleItem.html'
     })
     .otherwise({ 
       redirectTo: '/' 

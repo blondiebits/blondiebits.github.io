@@ -6,5 +6,5 @@ app.directive("singlepost", function() {
       p: '=',
       i: '='
     },
-    templateUrl: 'assets/js/directives/singlepost.html'
+    templateUrl: 'js/directives/singlepost.html'
 }})
