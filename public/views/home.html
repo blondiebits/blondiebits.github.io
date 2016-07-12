@@ -17,7 +17,7 @@
 
 	<!-- Post #/{{$index}}-->
 	<div ng-repeat="p in posts|limitTo:4">
-		<mainpost p="p" i="$index"></mainpost>
+		<mainpost p="p" i="posts.length - 1 - $index"></mainpost>
 
 	</div>
 	
