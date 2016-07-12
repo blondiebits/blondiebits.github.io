@@ -1,5 +1,5 @@
 
-app.directive("htmlone", function() {
+app.directive("articlepost", function() {
   return {
     restrict: 'E',
     scope: {
@@ -8,7 +8,7 @@ app.directive("htmlone", function() {
       hideorshow: '=',
     },
 
-    templateUrl: 'js/directives/htmlOne.html',
+    templateUrl: 'js/directives/articlepost.html',
     
     link: function($scope, element, attrs) {
             $scope.getArticle = function(){
