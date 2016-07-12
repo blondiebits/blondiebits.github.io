@@ -7,5 +7,14 @@ app.directive("htmlone", function() {
       i: '=',
       hideorshow: '=',
     },
-    templateUrl: 'js/directives/htmlOne.html'
+
+    templateUrl: 'js/directives/htmlOne.html',
+    
+    
+    link: function($scope, element, attrs) {
+            $scope.getIncludeString = function(){
+            	return "js/directives/article" + "0" + ".html"
+            }
+        }
+
 }})
