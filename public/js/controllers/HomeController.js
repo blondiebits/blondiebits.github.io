@@ -4,7 +4,7 @@ app.controller('HomeController', ['$scope', 'blog', function($scope, blog) {
 	$scope.showButton = true;
 
 	$scope.getString = function(index) {
-		return "js/directives/article" + index + "html"
+		return "js/directives/article" + index + ".html"
 	}
-	
+
 }]);
