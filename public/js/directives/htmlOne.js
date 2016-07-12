@@ -4,7 +4,7 @@ app.directive("htmlone", function() {
     restrict: 'E',
     scope: {
       p: '=',
-      ind: '=',
+      ind: '@',
       hideorshow: '=',
     },
 
@@ -13,11 +13,11 @@ app.directive("htmlone", function() {
     
     link: function($scope, element, attrs) {
             $scope.getIncludeString = function(index){
-            //	if ($scope.ind) {
+            	if ($scope.ind) {
             		return "js/directives/article" + index + ".html"
-            //	} else {
-            	//	return "ok"
-            // }
+            	} else {
+            		return "ok"
+             }
             }
         }
 
