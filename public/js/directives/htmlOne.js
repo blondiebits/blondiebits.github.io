@@ -12,7 +12,7 @@ app.directive("htmlone", function() {
     
     link: function($scope, element, attrs) {
             $scope.getArticle = function(){
-            		return "js/directives/article" + $scope.ind + ".html"
+            		return "articles/article" + $scope.ind + ".html"
             }
         }
 
