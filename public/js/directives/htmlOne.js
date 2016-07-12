@@ -10,7 +10,6 @@ app.directive("htmlone", function() {
 
     templateUrl: 'js/directives/htmlOne.html',
     
-    
     link: function($scope, element, attrs) {
             $scope.getIncludeString = function(index){
             	if ($scope.i) {
