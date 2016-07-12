@@ -4,7 +4,7 @@ app.directive("htmlone", function() {
     restrict: 'E',
     scope: {
       p: '=',
-      ind: '@',
+      ind: '=',
       hideorshow: '=',
     },
 
