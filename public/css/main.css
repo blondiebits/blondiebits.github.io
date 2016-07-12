@@ -3328,6 +3328,10 @@
 
 /* Footer */
 
+	#footer {
+		text-align:center;
+	}
+
 	#footer .icons {
 		color: #aaaaaa;
 	}
