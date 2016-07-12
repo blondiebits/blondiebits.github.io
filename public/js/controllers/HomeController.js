@@ -3,4 +3,8 @@ app.controller('HomeController', ['$scope', 'blog', function($scope, blog) {
 	$scope.posts = blog.posts;
 	$scope.showButton = true;
 
+	$scope.getString = function(index) {
+		return "js/directives/article" + index + "html"
+	}
+	
 }]);
