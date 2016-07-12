@@ -11,7 +11,7 @@ app.directive("htmlone", function() {
     templateUrl: 'js/directives/htmlOne.html',
     
     link: function($scope, element, attrs) {
-            $scope.getIncludeString = function(){
+            $scope.getArticle = function(){
             		return "js/directives/article" + $scope.ind + ".html"
             }
         }
