@@ -3276,10 +3276,12 @@
 	#intro header h2 {
 		font-size: 2em;
 		font-weight: 900;
+		text-align:center;
 	}
 
 	#intro header p {
 		font-size: 0.8em;
+		text-align:center;
 	}
 
 	@media screen and (max-width: 1280px) {
