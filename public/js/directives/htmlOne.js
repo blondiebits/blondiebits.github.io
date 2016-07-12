@@ -12,11 +12,7 @@ app.directive("htmlone", function() {
     
     link: function($scope, element, attrs) {
             $scope.getIncludeString = function(index){
-            	if ($scope.i) {
             		return "js/directives/article" + index + ".html"
-            	} else {
-            		return "ok"
-             }
             }
         }
 
