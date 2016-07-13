@@ -30,7 +30,7 @@ app.factory('blog',[function() {
 
 
 	return {
-		posts : [post0]
+		posts : [post1, post0]
 	}
 
 }])
