@@ -316,11 +316,11 @@
 		margin-left: 8.33333%;
 	}
 
-	@media screen and (max-width: 544px) {
+/*	@media screen and (max-width: 1200px) and (min-width: 737px) {
 		.remember-row > * {
-	
+			width: 33.3333333333%;
 		}
-	}
+	}*/
 
 	@media screen and (max-width: 1680px) {
 
@@ -538,7 +538,9 @@
 	}
 
 	@media screen and (max-width: 1280px) {
-
+		.remember-row > * {
+			width: 33.3333333333%;
+		}
 		.row > * {
 			padding: 0 0 0 1em;
 		}
