@@ -976,9 +976,9 @@
 	@media screen and (max-width: 736px) {
 
 		.remember-row > * {
-			width: 50%;
+			width: 100%;
 		}
-		
+
 		.row > * {
 			padding: 0 0 0 1em;
 		}
