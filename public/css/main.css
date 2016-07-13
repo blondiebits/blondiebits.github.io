@@ -539,7 +539,7 @@
 
 	@media screen and (max-width: 1280px) {
 		.remember-row > * {
-			width: 33.3333333333%;
+			width: 50%;
 		}
 		.row > * {
 			padding: 0 0 0 1em;
@@ -756,6 +756,10 @@
 
 	@media screen and (max-width: 980px) {
 
+		.remember-row > * {
+			width: 50%;
+		}
+
 		.row > * {
 			padding: 0 0 0 1em;
 		}
@@ -971,6 +975,10 @@
 
 	@media screen and (max-width: 736px) {
 
+		.remember-row > * {
+			width: 50%;
+		}
+		
 		.row > * {
 			padding: 0 0 0 1em;
 		}
@@ -1185,7 +1193,9 @@
 	}
 
 	@media screen and (max-width: 480px) {
-
+		.remember-row > * {
+			width: 100%;
+		}
 		.row > * {
 			padding: 0 0 0 1em;
 		}
