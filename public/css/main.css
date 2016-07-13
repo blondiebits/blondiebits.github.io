@@ -316,11 +316,11 @@
 		margin-left: 8.33333%;
 	}
 
-	@media screen and (min-width: 544px) {
-	.remember-row > * {
+	@media screen and (max-width: 544px) {
+		.remember-row > * {
 	
+		}
 	}
-}
 
 	@media screen and (max-width: 1680px) {
 
