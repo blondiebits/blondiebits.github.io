@@ -1,85 +1,168 @@
 
 	 <!-- Intro pic -->
+	 <a href="images/article1/thumbnail.png" class="image featured"><img src="images/article1/thumbnail.png" alt="" /></a>
 
 		<p>Let’s write some CSS. <b>CSS</b> stands for Cascading Style Sheets and it styles our HTML skeleton code. Building on our project from last time, we’ll create a main.css file that will store all of our styling code. </p>
 
 		<!-- Pic of file paths and saving main.css -->
 
+		 <a href="images/article1/image0.jpg" class="image featured"><img src="images/article1/image0.jpg" alt="" /></a>
+
 		<p>In our HTML from before, we had an h3 tag with the text "blue." What if we could actually make the text blue? Well we can with CSS. In our main.css, we'll <b>select</b> all the h3 elements on the HTML page and set their <b>color property</b> equal to the <b>value</b> blue.</p>
 
 		<!-- Pic with one side as html and other as css-->
 
+		<a href="images/article1/image1.jpg" class="image featured"><img src="images/article1/image1.jpg" alt="" /></a>
+
 		<p>This won't do anything yet because we haven't linked our main.css to our index.html page. To link it, we'll go to our index.html and write a <b>link tag</b>.</p>
+
+		<div ng-attr-class= "{{ hideorshow }}">
 
 		<!-- Pic with one side as html and other as css, but with link tag filled in -->
 
-		<div ng-attr-class= "{{ hideorshow }}">
+		<a href="images/article1/image2.jpg" class="image featured"><img src="images/article1/image2.jpg" alt="" /></a>
 			
 				<p>If we open the webpage, the h3 text should be blue. If your text isn't blue, make sure that you've saved both of your files and they are both on the same level in your folder. Also, make sure that you spelled main.css correctly in the link tag inside your index.html. </p>
 
 				<!-- Pic of web browser -->
 
-			<a href="images/article0/image4.jpg" class="image featured"><img src="images/article0/image4.jpg" alt="" /></a>
+			<a href="images/article1/image3.jpg" class="image featured"><img src="images/article1/image3.jpg" alt="" /></a>
 
 			<p>Now I don't really like this color. I would like a more navy shade of blue. How do we make that happen? Well we have <b>Google</b>. I love Google. We can google "rgb dark blue" and look for some clues on how to do this.</p>
 
-			<!-- picture of google search -->
+			<!-- picture of google search (NEED WIFI) -->
 
-			<a href="images/article0/image5.jpg" class="image featured"><img src="images/article0/image5.jpg" alt="" /></a>
 
 			<p>We will click the first link and now we have a bunch of options for colors. Scrolling down, I really like this navy color.</p>
 
-			<!-- picture of the first page scrolled down --> 
+			<!-- picture of the first page scrolled down (NEED WIFI) --> 
 
-			<a href="images/article0/image6.jpg" class="image featured"><img src="images/article0/image6.jpg" alt="" /></a>
 
 			<p>I have two different ways of putting this navy into my code. I can use the <b>Hex code</b> or the <b>RGB value</b>. The Hex code for the navy color is #000080 and the RGB value is rgb(0, 0, 128). RGB stands for Red Green Blue and it let's us know how much red, green, and blue is in a color. So for navy, there is 0 red, 0 green, and 128 blue. To put this in perspective, white is rgb(255, 255, 255) and black is rgb(0, 0, 0). In our main.css, we will use the RGB value and change the value of the color property from blue to rgb(0, 0, 128). </p>
 
 			<!-- picture of main.css code --> 
 
-			<a href="images/article0/image7.jpg" class="image featured"><img src="images/article0/image7.jpg" alt="" /></a>
+			<a href="images/article1/image6.jpg" class="image featured"><img src="images/article1/image6.jpg" alt="" /></a>
 
 			<p>Refreshing the page, the h3 tag's text should be a navy blue color.</p>
 
 			<!-- picture of the browser--> 
 
-			<a href="images/article0/image8.jpg" class="image featured"><img src="images/article0/image8.jpg" alt="" /></a>
+			<a href="images/article1/image7.jpg" class="image featured"><img src="images/article1/image7.jpg" alt="" /></a>
 
 			<p>Now what if we want the text in the h3 tag and the parargraph to be italic? We can group them with something called a <b>div</b>. A div is kind of like a container that can hold many other HTML elements.</p>
 
 			<!-- picture of div code --> 
+			<a href="images/article1/image8.jpg" class="image featured"><img src="images/article1/image8.jpg" alt="" /></a>
 
-			<a href="images/article0/image9.jpg" class="image featured"><img src="images/article0/image9.jpg" alt="" /></a>
-
-			<p>To make the text inside the div italic, we must select the div in the CSS and set a property to italicize the text. Right now, we cannot the select the div because it doesn't have a name. We can add an name by adding a <b>class attribute</b> to the div and giving it the value italic.</p>
+			<p>To make the text inside the div italic, we must select the div in the CSS and set a property to italicize the text. Right now, we cannot the select the div because it doesn't have a name. We can add a name by adding a <b>class attribute</b> to the div and giving it the value italic.</p>
 
 			<!-- picture of div italic code --> 
+			<a href="images/article1/image9.jpg" class="image featured"><img src="images/article1/image9.jpg" alt="" /></a>
 
-			<a href="images/article0/image10.jpg" class="image featured"><img src="images/article0/image10.jpg" alt="" /></a>
 
-			<p>More about what a <b>class</b> means in minute, but we can select this div in the CSS using it's class name italic.</p>
+			<p>More about what a <b>class</b> means in minute, but we can select this div in the CSS using it's class name italic. Then, we can access its <b>font-style property</b> and set it to italic.</p>
 
 			<!-- picture of HTML on one side and CSS selection--> 
 
-			<a href="images/article0/image11.jpg" class="image featured"><img src="images/article0/image11.jpg" alt="" /></a>
+			<a href="images/article1/image10.jpg" class="image featured"><img src="images/article1/image10.jpg" alt="" /></a>
 
-			<p>Notice, to select the div, we put a <b>dot</b> in front of the class name, but when we select other HTML elements, we do not have the dot. This is important to remember when coding webpages. Now, another thing we can select in CSS is an <b>id</b>. Just now, we selected a class. However, when using an id, only one div can use the unique id name whereas multiple divs can use the same class name. This will all make more sense in a minute. Going back to our code, we can add another div with the class name italic. Inside this second div, we'll add a list of unordered bulleted items with the <b>ul tag</b> and then add two list items with the <b>li tag.</b></p>
+			<p>Notice, to select the div, we put a <b>dot</b> in front of the class name, but when we select other HTML elements, we do not have the dot. This is important to remember when coding webpages. Now, another thing we can select in CSS is an <b>id</b>. Just now, we selected a class. However, when using an id, only one div can use a given id name whereas multiple divs can use the same class name. This will all make more sense in a minute. Going back to our code, we can add another div with the class name italic. Inside this second div, we'll add a list of unordered bulleted items with the <b>ul tag</b> and then add two list items with the <b>li tag.</b></p>
 
 			<!-- picture of HTML with additional div on one side and CSS selection--> 
+
+			<a href="images/article1/image11.jpg" class="image featured"><img src="images/article1/image11.jpg" alt="" /></a>
 
 			<p>We could have also created an ordered list by using an <b>ol tag</b> instead of a ul tag. This would have created a numbered list VS a bulleted list. With this code above, our webpage should have a bulleted list with two italicized items.</p>
 
 			<!-- picture of rendered webpage--> 
+			<a href="images/article1/image12.jpg" class="image featured"><img src="images/article1/image12.jpg" alt="" /></a>
 
 			<p>Above, we use our italic class twice - however, we are only allowed to use an id once. In our HTML code, we'll create a new div and add an <b>id attribute</b> with the value bold. Then, we'll select it in our CSS with <b>hashtag bold</b> (#bold) and set its <b>font-weight property</b> to be bold. Notice, because we are selecting an id (instead of a class or a HTML element), we use a hashtag in front of the id name.</p>
 
 			<!-- picture of HTML with ID div on one side and CSS ID selection-->
 
+			<a href="images/article1/image13.jpg" class="image featured"><img src="images/article1/image13.jpg" alt="" /></a>
+
 			<p>In continuing this code, we could give other div's id attributes, but they could not have the value "bold" since we have already used that unique identifier. If we wanted other div's to have the id "bold", then we would need to make a class with the value "bold" instead of an id. Now, let's refresh and see the results.</p>
 
 			<!-- picture of rendered webpage-->
+			<a href="images/article1/image14.jpg" class="image featured"><img src="images/article1/image14.jpg" alt="" /></a>
 
 			<p>These aren't all the properties you can mess with but they are some of the main ones. For more, like changing the background, check out <a href="http://www.w3schools.com/cssref/">w3schools</a> or try just googling around. You might be surprised at what you can find on your own. Now, it would take so much time to get everything exactly how we wanted if we wrote every line of CSS ourselves. Is there any easier way? Yes - Think Bootstrap! Bootstrap is a framework that makes styling and formating so much easier if you just want to code up a website quickly. That's what next week's post will be about. See you then.</p>.
+
+		<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- Unordered Lists -->
+&lt;ol>
+	&lt;li>First item in unordered list&lt;/li>
+	&lt;li>Second item in unordered list&lt;/li>
+	&lt;li>Third item in unordered list&lt;/li>
+&lt;/ol>
+
+&lt;!-- Div -->
+&lt;div> &lt;/div>
+
+&lt;!-- Class Attribute -->
+&lt;div class="className">&lt;/div>
+ 
+&lt;!-- ID Attribute -->
+&lt;div id="uniqudIDName">&lt;/div>
+
+&lt;!-- Selecting in CSS -->
+htmlElement
+.className
+#idName
+
+&lt;!-- Writing in CSS -->
+h3 {
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+	&lt;!-- property : value --> 
+}
+
+</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+<h4>Plus a Little Extra:</h4>
+
+<pre><code> &lt;!-- Link text to another part of the same page using an ID --> 
+&lt;a href="#down">Click here to go further down the page&lt;/a>
+&lt;!-- lots of code to make this page long enough to scroll --> 
+&lt;div id="down">
+&lt;/div>
+
+&lt;!-- CSS to change background color of the page --> 
+body {
+	background-color: black;
+}
+
+&lt;!-- Add a top/left/right/bottom margin to all images --> 
+img {
+	top-margin: 10px;
+	right-margin: 20px;
+	bottom-margin: 10px;
+	left-margin: 20px;
+}
+
+&lt;!-- Give all images the same margin on all sides --> 
+img {
+	margin: 10px;
+}
+
+&lt;!-- Make text in an HTML element all uppercase --> 
+p {
+    text-transform: uppercase;
+}
+
+</code></pre>
+</div>
+
+		</div>
 
 		</div>
 
