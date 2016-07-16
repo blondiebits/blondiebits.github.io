@@ -1,5 +1,7 @@
 app.factory('blog',[function() {
 
+	var kathryn_image = "https://pbs.twimg.com/profile_images/747920859189280770/mh2ZEpb2.jpg"
+
 	var post0 = {
 
 		title: "Create a webpage in 5 minutes",
@@ -8,9 +10,9 @@ app.factory('blog',[function() {
 
 		author: "Kathryn Hodge",
 
-		author_image: "https://pbs.twimg.com/profile_images/747920859189280770/mh2ZEpb2.jpg",
+		author_image: kathryn_image,
 
-		date: "Monday, July 10th",
+		date: "Friday, July 8th",
 	
 	}
 
@@ -22,9 +24,9 @@ app.factory('blog',[function() {
 
 		author: "Kathryn Hodge",
 
-		author_image: "https://pbs.twimg.com/profile_images/747920859189280770/mh2ZEpb2.jpg",
+		author_image: kathryn_image,
 
-		date: "Wednesday, July 13th",
+		date: "Friday, July 15th",
 	
 	}
 
