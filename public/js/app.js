@@ -10,6 +10,14 @@ app.config(function ($routeProvider) {
     	controller: 'SingleItemController',
     	templateUrl: 'views/singleItem.html'
     })
+    .when('/allposts', {
+      controller: 'AllPostsController',
+      templateUrl: 'views/allposts.html'
+    })
+    .when('/author' ,{
+      controller: 'AuthorController',
+      templateUrl: 'views/author.html'
+    })
     .otherwise({ 
       redirectTo: '/' 
     }); 
