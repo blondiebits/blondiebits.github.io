@@ -14,6 +14,8 @@ app.factory('blog',[function() {
 
 		author_description: "Software Developer // Hacker // Tech Evangalist",
 
+		author_bio: "bio/kathryn_bio.html",
+		
 		date: "Friday, July 8th",
 	
 	}
@@ -30,7 +32,7 @@ app.factory('blog',[function() {
 
 		author_description: "Software Developer // Hacker // Tech Evangalist",
 
-		author_bio: "bio/kathryn_bio.html"
+		author_bio: "bio/kathryn_bio.html",
 
 		date: "Friday, July 15th",
 	
