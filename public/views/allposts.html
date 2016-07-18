@@ -1,29 +1,13 @@
 <div id="main">
 	<section>
-								<div class="mini-posts">
+		<div class="mini-posts">
 
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#/1"> {{ posts[0].title }}</a></h3>
-												<time class="published" datetime="2015-10-20">{{ posts[0].date }}</time>
-												<a href="#/author/1" class="author"><img ng-src="{{ posts[0].author_image }} " alt="" /></a>
-											</header>
-											<a href="#/1" class="image"><img src="images/article1/pin.png" alt="" /></a>
-										</article>
+			<div ng-repeat="p in posts">
+				<allpostssingle p="p" i="posts.length - 1 - $index"></allpostssingle>
+			</div>
 
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#/0"> {{ posts[1].title }}</a></h3>
-												<time class="published" datetime="2015-10-20">{{ posts[1].date }}</time>
-												<a href="#/author/0" class="author"><img ng-src="{{ posts[1].author_image }} " alt="" /></a>
-											</header>
-											<a href="#/0" class="image"><img src="images/article0/pin.png" alt="" /></a>
-										</article>
-
-								</div>
-							</section>
+		</div>
+	</section>
 
 
-	</div>
+</div>
