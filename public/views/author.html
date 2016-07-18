@@ -1,36 +1,20 @@
 <div id="main">
 
-<!-- to do : author page 1. name 2. pic 3. bio setup-->
+	<!-- to do : create a directive for this code -->
 
-<article class="post">
+	<article class="post">
 		<header>
 			<div class="title">
-				<h2><a href="https://blondiebytes.github.io/">Kathryn Hodge</a></h2>
-				<p>Software Developer // Hacker // Tech Evangalist</p>
+				<h2><a href="https://blondiebytes.github.io/">{{ post.author }}</a></h2>
+				<p>{{ post.author_description }} </p>
 			</div>
 			<div class="meta">
-				<a href="#/author/{{ postIndex }}" class="author"><span class="name">{{ post.author }}</span><img ng-src="{{ post.author_image }}" alt="" /></a>
+				<a href="#/author/{{ postIndex }}" class="author"><img ng-src="{{ post.author_image }}" alt="" /></a>
 			</div>
 		</header>
 
-		<p>I'm a Computer Science major and Film minor in my last year at Vassar College. I came to Vassar not really knowing what I wanted to do, but took a computer science class on a whim. Now, I create YouTube tutorials for people that want to learn how to code and attend as many hackathons as I can. I enjoy developing and coding, but most of all, I want to build things that make an impact.</p>
+		<div ng-include="post.author_bio"></div> -->
 
-		
-		<ul>
-		Experience:
-			<li>NBCUniversal Media Labs Intern | Summer 2016</li>
-			<li>Codecademy Pro Advisor | April 2016 - Present</li>
-			<li>Adobe Student Representative | January 2016 - Present</li>
-			<li>URSI Game Design Research Assistant | Summer 2015</li>
-			<li>YouTuber : Tutorial Writer | June 2015 - Present</li>
-			<li>Computer Science Teaching Assistant | 2014 - Present</li>
-			<li>Production Intern at KennyEdit | Summer 2014</li>
-		</ul>
+		</article>
 
-
-
-		<!-- <div ng-include="getAuthorBio()"></div> -->
-
-	</article>
-
-</div>
+	</div>

@@ -12,6 +12,8 @@ app.factory('blog',[function() {
 
 		author_image: kathryn_image,
 
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
 		date: "Friday, July 8th",
 	
 	}
@@ -25,6 +27,10 @@ app.factory('blog',[function() {
 		author: "Kathryn Hodge",
 
 		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html"
 
 		date: "Friday, July 15th",
 	
