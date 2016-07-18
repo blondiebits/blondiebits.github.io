@@ -1,53 +1,29 @@
 <div id="main">
+	<section>
+								<div class="mini-posts">
 
-							<section>
-								<ul class="posts">
-									<li>
-										<article>
+									<!-- Mini Post -->
+										<article class="mini-post">
 											<header>
-												<h3><a href="#">Lorem ipsum fermentum ut nisl vitae</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												<h3><a href="#/1"> {{ posts[0].title }}</a></h3>
+												<time class="published" datetime="2015-10-20">{{ posts[0].date }}</time>
+												<a href="#/author/1" class="author"><img ng-src="{{ posts[0].author_image }} " alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<a href="#/1" class="image"><img src="images/article1/pin.png" alt="" /></a>
 										</article>
-									</li>
-									<li>
-										<article>
+
+									<!-- Mini Post -->
+										<article class="mini-post">
 											<header>
-												<h3><a href="#">Convallis maximus nisl mattis nunc id lorem</a></h3>
-												<time class="published" datetime="2015-10-15">October 15, 2015</time>
+												<h3><a href="#/0"> {{ posts[1].title }}</a></h3>
+												<time class="published" datetime="2015-10-20">{{ posts[1].date }}</time>
+												<a href="#/author/0" class="author"><img ng-src="{{ posts[1].author_image }} " alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<a href="#/0" class="image"><img src="images/article0/pin.png" alt="" /></a>
 										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Euismod amet placerat vivamus porttitor</a></h3>
-												<time class="published" datetime="2015-10-10">October 10, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Magna enim accumsan tortor cursus ultricies</a></h3>
-												<time class="published" datetime="2015-10-08">October 8, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic11.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Congue ullam corper lorem ipsum dolor</a></h3>
-												<time class="published" datetime="2015-10-06">October 7, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic12.jpg" alt="" /></a>
-										</article>
-									</li>
-								</ul>
+
+								</div>
 							</section>
+
 
 	</div>

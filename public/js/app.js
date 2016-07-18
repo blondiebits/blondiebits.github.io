@@ -6,17 +6,17 @@ app.config(function ($routeProvider) {
       controller: 'HomeController', 
       templateUrl: 'views/home.html' 
     }) 
-    .when('/:id', {
-    	controller: 'SingleItemController',
-    	templateUrl: 'views/singleItem.html'
-    })
     .when('/allposts', {
       controller: 'AllPostsController',
       templateUrl: 'views/allposts.html'
     })
-    .when('/author' ,{
+    .when('/author/:id' ,{
       controller: 'AuthorController',
       templateUrl: 'views/author.html'
+    })
+    .when('/:id', {
+    	controller: 'SingleItemController',
+    	templateUrl: 'views/singleItem.html'
     })
     .otherwise({ 
       redirectTo: '/' 
