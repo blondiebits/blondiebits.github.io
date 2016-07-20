@@ -1,15 +1,17 @@
 
 <!-- banner image -->
 
-<p>Let’s talk about <b>bootstrap</b>. Bootstrap is a HTML, CSS, and JavaScript framework that helps developers make responsive websites. A website is <b>responsive</b> if the layout still looks okay when the size of the window or screen changes. Opening two webpages, if I have one <a href="http://www.google.com">Google</a> window at near full-screen and another <a href="http://www.google.com">Google</a> window with a mobile-sized screen, both windows still look good. By "looking good," we mean that the elements of the website get smaller as the window size shrinks and the user can still access everything on the page. This functionality is what we want in our websites. </p>
+<p>Let’s talk about <b>Bootstrap</b>. Bootstrap is a HTML, CSS, and JavaScript <b>framework</b> that helps developers make responsive websites. A website is <b>responsive</b> if the layout still looks okay when the size of the window or screen changes. Opening two webpages, if I have one <a href="http://www.google.com">Google</a> window at near full-screen and another <a href="http://www.google.com">Google</a> window with a mobile-sized screen, both windows still look good. By "looking good," we mean that the elements of the website get smaller as the window size shrinks and the user can still access everything on the page. This functionality is what we want in our websites. </p>
 
 <!-- image of the two google.com windows -->
 
-<p>To incorporate bootstrap into an application, there are two things we can do. We could either import bootstrap into our code or download a sample project. For this tutorial, we’ll take the <a href="https://github.com/blondiebits/code-in-5/tree/master/CSS%20in%205">code</a> we created in the <a href="http://blondiebits.herokuapp.com/#/1">CSS in 5 tutorial</a> and just import the bootstrap framework. To import the framework, we can either download the framework and link it locally to our code or just link it from the internet. We’ll link it from the internet from now and it’s going to look a lot like how we linked our CSS. Going to the Bootstrap website....</p>
+<p>To incorporate Bootstrap into an application, there are two things we can do. We could either <b>import</b> bootstrap into our code or download a sample project. For this tutorial, we’ll take the <a href="https://github.com/blondiebits/code-in-5/tree/master/CSS%20in%205">code</a> we created in the <a href="http://blondiebits.herokuapp.com/#/1">CSS in 5 tutorial</a> and just import the Bootstrap framework. To import the framework, we can either download the framework and link it locally to our code or just link it from the internet. We’ll link it from the internet from now and it’s going to look a lot like how we linked our CSS. Going to the Bootstrap website....</p>
 
 <!-- picture of bootstrap website -->
 
 <p>and scrolling down...</p>
+
+<div ng-attr-class= "{{ hideorshow }}">
 
 <!-- picture of scrolled down website -->
 
@@ -17,31 +19,35 @@
 
 <!-- picture of index.html with link tag -->
 
-<p>Now if we save and refresh our page… notice our styling changed a bit. That’s because bootstrap already has some CSS built-in that makes the headers and text look a bit different. If we wanted to, we could overwrite whatever CSS bootstrap has in our own custom CSS.</p>
+<p>Now if we save and refresh our page… notice our styling changed a bit. That’s because Bootstrap already has some CSS built-in that makes the headers and text look a bit different. If we wanted to, we could overwrite whatever CSS Bootstrap has in our own custom CSS.</p>
 
 <!-- picture of refreshed webpage-->
 
-<p>Now, the thing that makes bootstrap responsive is its 12 column grid. Here's the <a href="https://getbootstrap.com/examples/grid/">documentation</a> from the website, but this might be a bit confusing at first so let's look at a picture</p>
+<p>Now, the thing that makes Bootstrap responsive is its <b>12-column grid</b>. Here's the <a href="https://getbootstrap.com/examples/grid/">documentation</a> from the website, but this might be a bit confusing at first so let's look at a picture</p>
 
 <!-- picture with this url http://www.ee-web.co.uk/demos/bootstrap/ -->
 
-<p>Bootstrap divides a webpage into rows and columns. Each row is divided into 12 columns and an element (say a paragraph or an image or a header) can take up any number of these columns. You can also have multiple elements on one row. An element could take up all twelve columns or just the three on the right or whatever. Now, no matter what the screen size - the screen is broken up into 12 columns so I can specify how many columns I want for each element on a small, medium, large, and extra-large screen. I can also say that I just want it to take up 6 columns on a medium screen and it will resize itself appropriately for smaller and larger screens. This may be confusing, but don’t worry - we are going to mess with it ourselves. Let’s say I want two different headers on the same row taking up an equal amount of space and a button underneath the second header. We’d have one row and each header would take up 6 of the 12 columns. In code, we would first create the row for our content, making a div with the class row.</p>
+<p>Bootstrap divides a webpage into <b>rows</b> and <b>columns</b>. Each row is divided into 12 columns and an element (say a paragraph or an image or a header) can take up any number of these columns. You can also have multiple elements on one row. An element could take up all twelve columns or just the three on the right or whatever. Now, no matter what the screen size - the screen is broken up into 12 columns so I can specify how many columns I want for each element on a <b>small</b>, <b>medium</b>, <b>large</b>, and <b>extra-large screen</b>. I can also say that I just want it to take up 6 columns on a medium screen and it will resize itself appropriately for smaller and larger screens. This may be confusing, but don’t worry - we are going to mess with it ourselves. Let’s say I want two different headers on the same row taking up an equal amount of space and a button underneath the second header. We’d have one row and each header would take up 6 of the 12 columns. In code, we would first create the row for our content, making a div with the class <b>row</b>.</p>
 
 <!-- index.html with <div class = “row”> </div> -->
 
-<p>Row is a class built into the bootstrap framework so we won’t even need to add the class row to our CSS. Now, we can put our two columns inside of the row. We’ll say col because it’s a column, md for a medium size device, and 6 for 6 columns. Again - the CSS for this class is already built into bootstrap.</p>
+<p>Row is a class built into the Bootstrap framework so we won’t even need to add the class row to our CSS. Now, we can put our two columns inside of the row. We’ll say <b>col</b> because it’s a column, <b>md</b> for a medium size device, and <b>6</b> for 6 columns. Again - the CSS for this class is already built into Bootstrap.</p>
 
 <!-- index.html with two columns -->
 
-<p>Next, we’ll add our two headers, one in each of the columns, and they will be the same size and spaced equally in the same row because we set the class of column to be col-md-6</p>
+<p>Next, we’ll add our two headers, one in each of the columns, and they will be the same size and spaced equally in the same row because we set the class of column to be <b>col-md-6</b></p>
 
 <!-- index.html with two headers -->
 
-<p>Now we just need our button under the second header. What if you don’t know how to add a button? Well we’ll google button bootstrap....</p>
+<p>If open two webpages (one small sized and another medium sized) with this code, our headers can be seen even if the screen is smaller and Bootstrap adjusts the size and spacing of the headers automatically.</p>
+
+<!-- image of refreshed webpage -->
+
+<p>Now we just need our button under the second header. What if you don’t know how to add a button? Well we’ll google button Bootstrap....</p>
 
 <!-- image of google search for button bootstrap -->
 
-<p>Then, click the first link and copy and paste what is there. The button tag is just a tag in html, but the classes (btn and btn-primary) from bootstrap are going to make our button look awesome.</p>
+<p>Then, click the first link and copy and paste what is there. The button tag is just a tag in html, but the classes (btn and btn-primary) from Bootstrap are going to make our button look awesome.</p>
 
 <!-- image of button documentation from boostrap -->
 
@@ -61,11 +67,11 @@
 		</div>
 	</div> -->
 
-<p>We will save and refresh - and there’s our button. There are lots of other classes like forms and jumbotrons already built-in to bootstrap so you don’t have to create them from scratch. Google will definitely be your friend with this type of stuff.</p>
+<p>We will save and refresh - and there’s our button. There are lots of other classes like forms and jumbotrons already built-in to Bootstrap so you don’t have to create them from scratch. Google will definitely be your friend with this type of stuff.</p>
 
 <!-- image of refreshed webpage -->
 
-<p>We can also just download a sample template and change the text, fonts, and formatting to something we like. So we if go and google bootstrap templates...</p>
+<p>We can also just download a sample template and change the text, fonts, and formatting to something we like. So we if go and google Bootstrap templates...</p>
 
 <!-- Google search of bootstrap templates -->
 
@@ -81,7 +87,7 @@
 
 <!-- index.html template in sublime -->
 
-<p>There’s a lot that’s familiar code here. The index.html file is where all of our core HTML code will be - from there we’ll find out where the CSS is. The img folder is where our images are and the vendor folder holds our bootstrap. In the index.html, we link the bootstrap from our vendor folder (remember in our other project above, we linked it from the internet). We also see our CSS here is linked from our CSS folder and we scroll down - a lot of this looks pretty familiar.</p>
+<p>There’s a lot that’s familiar code here. The index.html file is where all of our core HTML code will be - from there we’ll find out where the CSS is. The img folder is where our images are and the vendor folder holds our Bootstrap. In the index.html, we link the Bootstrap from our vendor folder (remember in our other project above, we linked it from the internet). We also see our CSS here is linked from our CSS folder and we scroll down - a lot of this looks pretty familiar.</p>
 
 <!-- picture of i tag (same index.html - scolled down) -->
 
@@ -158,6 +164,7 @@ frameborder="0" allowfullscreen class="video"></iframe>
 <!-- <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Create a quick webpage in 5 minutes! " data-via="blondiebytes" data-hashtags="codein5" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 <p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
 		</div>
+
 
 
 

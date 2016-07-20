@@ -16,7 +16,7 @@ app.factory('blog',[function() {
 
 		author_bio: "bio/kathryn_bio.html",
 		
-		date: "Friday, July 8th",
+		date: "Friday, July 8",
 	
 	}
 
@@ -34,13 +34,31 @@ app.factory('blog',[function() {
 
 		author_bio: "bio/kathryn_bio.html",
 
-		date: "Friday, July 15th",
+		date: "Friday, July 15",
+	
+	}
+
+	var post2 = {
+
+		title: "Bootstrap in 5 minutes",
+
+		subtitle: "Learn the fundamentals of bootstrap in 5 minutes.",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, July 22",
 	
 	}
 
 
 	return {
-		posts : [post1, post0]
+		posts : [post2, post1, post0]
 	}
 
 }])
