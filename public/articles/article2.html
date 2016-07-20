@@ -4,3 +4,160 @@
 <p>Let’s talk about <b>bootstrap</b>. Bootstrap is a HTML, CSS, and JavaScript framework that helps developers make responsive websites. A website is <b>responsive</b> if the layout still looks okay when the size of the window or screen changes. Opening two webpages, if I have one <a href="http://www.google.com">Google</a> window at near full-screen and another <a href="http://www.google.com">Google</a> window with a mobile-sized screen, both windows still look good. By "looking good," we mean that the elements of the website get smaller as the window size shrinks and the user can still access everything on the page. This functionality is what we want in our websites. </p>
 
 <!-- image of the two google.com windows -->
+
+<p>To incorporate bootstrap into an application, there are two things we can do. We could either import bootstrap into our code or download a sample project. For this tutorial, we’ll take the <a href="https://github.com/blondiebits/code-in-5/tree/master/CSS%20in%205">code</a> we created in the <a href="http://blondiebits.herokuapp.com/#/1">CSS in 5 tutorial</a> and just import the bootstrap framework. To import the framework, we can either download the framework and link it locally to our code or just link it from the internet. We’ll link it from the internet from now and it’s going to look a lot like how we linked our CSS. Going to the Bootstrap website....</p>
+
+<!-- picture of bootstrap website -->
+
+<p>and scrolling down...</p>
+
+<!-- picture of scrolled down website -->
+
+<p>We'll see the link we need to add to our code. So we'll copy and paste this link tag and put it right in our index.html. This connects the Bootstrap framework and our HTML code. </p>
+
+<!-- picture of index.html with link tag -->
+
+<p>Now if we save and refresh our page… notice our styling changed a bit. That’s because bootstrap already has some CSS built-in that makes the headers and text look a bit different. If we wanted to, we could overwrite whatever CSS bootstrap has in our own custom CSS.</p>
+
+<!-- picture of refreshed webpage-->
+
+<p>Now, the thing that makes bootstrap responsive is its 12 column grid. Here's the <a href="https://getbootstrap.com/examples/grid/">documentation</a> from the website, but this might be a bit confusing at first so let's look at a picture</p>
+
+<!-- picture with this url http://www.ee-web.co.uk/demos/bootstrap/ -->
+
+<p>Bootstrap divides a webpage into rows and columns. Each row is divided into 12 columns and an element (say a paragraph or an image or a header) can take up any number of these columns. You can also have multiple elements on one row. An element could take up all twelve columns or just the three on the right or whatever. Now, no matter what the screen size - the screen is broken up into 12 columns so I can specify how many columns I want for each element on a small, medium, large, and extra-large screen. I can also say that I just want it to take up 6 columns on a medium screen and it will resize itself appropriately for smaller and larger screens. This may be confusing, but don’t worry - we are going to mess with it ourselves. Let’s say I want two different headers on the same row taking up an equal amount of space and a button underneath the second header. We’d have one row and each header would take up 6 of the 12 columns. In code, we would first create the row for our content, making a div with the class row.</p>
+
+<!-- index.html with <div class = “row”> </div> -->
+
+<p>Row is a class built into the bootstrap framework so we won’t even need to add the class row to our CSS. Now, we can put our two columns inside of the row. We’ll say col because it’s a column, md for a medium size device, and 6 for 6 columns. Again - the CSS for this class is already built into bootstrap.</p>
+
+<!-- index.html with two columns -->
+
+<p>Next, we’ll add our two headers, one in each of the columns, and they will be the same size and spaced equally in the same row because we set the class of column to be col-md-6</p>
+
+<!-- index.html with two headers -->
+
+<p>Now we just need our button under the second header. What if you don’t know how to add a button? Well we’ll google button bootstrap....</p>
+
+<!-- image of google search for button bootstrap -->
+
+<p>Then, click the first link and copy and paste what is there. The button tag is just a tag in html, but the classes (btn and btn-primary) from bootstrap are going to make our button look awesome.</p>
+
+<!-- image of button documentation from boostrap -->
+
+<p>We just need to add this button to our second column underneath the header and we'll be good to go.</p>
+
+<!-- image of index.html with button -->
+
+<p>Refreshing the page, we should see ...</p>
+
+<!-- image of refreshed webpage -->
+
+<p>Now, what if we wanted the button to be below the two headers and fill up the whole screen? Well, we would need to add another row and have the button take up 12 columns instead of 6. Going back to the code, we'll write...</p>
+
+<!-- image of code <div class = “row”>
+<div class = “col-md-12”>
+	<button type="button" class="btn btn-primary">Primary</button>
+		</div>
+	</div> -->
+
+<p>We will save and refresh - and there’s our button. There are lots of other classes like forms and jumbotrons already built-in to bootstrap so you don’t have to create them from scratch. Google will definitely be your friend with this type of stuff.</p>
+
+<!-- image of refreshed webpage -->
+
+<p>We can also just download a sample template and change the text, fonts, and formatting to something we like. So we if go and google bootstrap templates...</p>
+
+<!-- Google search of bootstrap templates -->
+
+<p>Click on the first link...</p>
+
+<!-- First link homepage -->
+
+<p>Find a template and download it...</p>
+
+<!-- Page of a template -->
+
+<p>We can mess around with it! Opening the template in Sublime...</p>
+
+<!-- index.html template in sublime -->
+
+<p>There’s a lot that’s familiar code here. The index.html file is where all of our core HTML code will be - from there we’ll find out where the CSS is. The img folder is where our images are and the vendor folder holds our bootstrap. In the index.html, we link the bootstrap from our vendor folder (remember in our other project above, we linked it from the internet). We also see our CSS here is linked from our CSS folder and we scroll down - a lot of this looks pretty familiar.</p>
+
+<!-- picture of i tag (same index.html - scolled down) -->
+
+<p>Here, still in our index.html, we have a col-md-4 with an i tag (which means icon) and the fa class, which creates a circle shopping cart icon from something called font-awesome, also linked in this project.</p>
+
+<!-- open webpage -->
+
+<p>If we open the webpage, we see the shopping cart icon right here - and it makes sense that the element took up 4 columns in the code because it takes up a third of the screen, given that there are a total of 12 columns. Next Friday I’ll show you how to use the developer tools in Google Chrome that make creating and editing webpages easier. See you then.</p>
+
+<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- Rows -->
+&lt;div class="row"&gt;&lt;/div&gt;
+
+&lt;!-- Columns in Rows -->
+&lt;div class="row"&gt;
+	&lt;div class="col-md-4"&gt;
+	&lt;/div&gt;
+	&lt;div class="col-md-4"&gt;
+	&lt;/div&gt;
+	&lt;div class="col-md-4"&gt;
+	&lt;/div&gt;
+	&lt;!-- col-screenSizeCode-numberOfColumns -->
+	&lt;!-- The number of columns in a given row should add up to 12-->
+&lt;/div&gt;
+
+&lt;!-- Font-Awesome Icons -->
+&lt;i class="fa fa-cloud">&lt;/i>
+&lt;i class="fa fa-heart">&lt;/i>
+&lt;i class="fa fa-car">&lt;/i>
+&lt;!-- Must have the Font-Awesome link tag to use these! -->
+&lt;!-- More icons can be found on the Bootstrap website! -->
+</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+			<h4>Plus a Little Extra:</h4>
+
+			<pre><code> &lt;!-- Bootstrap Icons -->
+&lt;i class="glyphicon glyphicon-user">&lt;/i>
+&lt;i class="glyphicon glyphicon-envelope">&lt;/i>
+&lt;i class="glyphicon glyphicon-thumbs-up">&lt;/i>
+&lt;!-- Must have the Bootstrap link tag to use these! -->
+&lt;!-- More icons can be found on the Bootstrap website! -->
+
+&lt;!-- Bootstrap Forms -->
+&lt;form role="form">
+	&lt;div class="form-group">
+    	&lt;label for="email">Email address:&lt;/label>
+    	&lt;input type="email" class="form-control" id="email">
+  	&lt;/div>
+  	&lt;div class="form-group">
+    	&lt;label for="pwd">Password:&lt;/label>
+    	&lt;input type="password" class="form-control" id="pwd">
+  	&lt;/div>
+  	&lt;div class="checkbox">
+    &lt;label>&lt;input type="checkbox">Remember me&lt;/label>
+  	&lt;/div>
+&lt;/form></code></pre>
+</div>
+</div>
+
+<h4 style="text-align: center">YouTube Video</h4>
+
+<div class="container">
+<iframe src="https://www.youtube.com/embed/4K4QhIAfGKY" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<br>
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fblondiebits.herokuapp.com%2F%23%2F0&layout=button&size=large&mobile_iframe=true&appId=1718092488456329&width=73&height=28" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+<!-- <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Create a quick webpage in 5 minutes! " data-via="blondiebytes" data-hashtags="codein5" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+<p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+		</div>
+
+
+
