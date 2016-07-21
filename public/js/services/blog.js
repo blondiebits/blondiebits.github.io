@@ -22,7 +22,7 @@ app.factory('blog',[function() {
 
 	var post1 = {
 
-		title: "Style your webpage with CSS in 5 minutes",
+		title: "Style your website with CSS in 5 minutes",
 
 		subtitle: "Learn the basics of CSS in 5 minutes.",
 
@@ -40,7 +40,7 @@ app.factory('blog',[function() {
 
 	var post2 = {
 
-		title: "Looking good with Bootstrap",
+		title: "How to look good with Bootstrap",
 
 		subtitle: "Learn the fundamentals of bootstrap in 5 minutes.",
 
@@ -58,7 +58,7 @@ app.factory('blog',[function() {
 
 
 	return {
-		posts : [post2, post1, post0]
+		posts : [post1, post0]
 	}
 
 }])
