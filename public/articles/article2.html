@@ -1,13 +1,13 @@
 
 <!-- banner image -->
 
-<p>Let’s talk about <b>Bootstrap</b>. Bootstrap is a HTML, CSS, and JavaScript <b>framework</b> that helps developers make responsive websites. A website is <b>responsive</b> if the layout still looks okay when the size of the window or screen changes. Opening two webpages, if I have one <a href="http://www.apple.com">Apple</a> window at near full-screen and another <a href="http://www.apple.com">Apple</a> window with a mobile-sized screen, both windows still look good. By "looking good," we mean that the elements of the website get smaller as the window size shrinks and the user can still access everything on the page. This functionality is what we want in our websites. </p>
+<p>Let’s talk about <b>Bootstrap</b>. Bootstrap is a HTML, CSS, and JavaScript <b>framework</b> that helps developers make responsive websites. A website is <b>responsive</b> if the layout still looks okay when the size of the window or screen changes. Opening two <a href="http://www.apple.com">Apple</a> webpages, if one window at near full-screen and another is shrunk to a mobile-size screen, both windows still look good. By "looking good," we mean that the elements of the website get smaller as the window size shrinks and the user can still access everything on the page. This functionality is what we want in our websites. </p>
 
 <!-- image of the two apple.com windows -->
 
 <a href="images/article2/image0.png" class="image featured"><img src="images/article2/image0.png" alt="" /></a>
 
-<p>To incorporate Bootstrap into an application, there are two things we can do. We could either <b>import</b> bootstrap into our code or download a sample project. For this tutorial, we’ll take the <a href="https://github.com/blondiebits/code-in-5/tree/master/CSS%20in%205">code</a> we created in the <a href="http://blondiebits.herokuapp.com/#/1">CSS in 5 tutorial</a> and just import the Bootstrap framework. To import the framework, we can either download the framework and link it locally to our code or just link it from the internet. We’ll link it from the internet from now and it’s going to look a lot like how we linked our CSS. Going to the <a href="http://getbootstrap.com/">Bootstrap website</a>....</p>
+<p>To incorporate Bootstrap into an application, there are two things we can do. We could either <b>import</b> bootstrap into our code or download a sample project. For this tutorial, we’ll take the <a href="https://github.com/blondiebits/code-in-5/tree/master/CSS%20in%205">code</a> we created in the <a href="http://blondiebits.herokuapp.com/#/1">CSS in 5 tutorial</a> and just import the Bootstrap framework. To import Bootstrap, we can either download the framework and link it locally to our code or just link it from the internet. We’ll link it from the internet for now and it’s going to look a lot like how we linked our CSS. Going to the <a href="http://getbootstrap.com/">Bootstrap website</a>....</p>
 
 <!-- picture of bootstrap website -->
 
@@ -21,13 +21,13 @@
 
 <a href="images/article2/image2.png" class="image featured"><img src="images/article2/image2.png" alt="" /></a>
 
-<p>Here we'll see the link we need to add to our code. So we'll copy and paste this link tag and put it right in our index.html. This connects the Bootstrap framework and our HTML code. </p>
+<p>Here, we'll see the link we need to add to our code. So we'll copy and paste this link tag and put it right in our index.html. This connects the Bootstrap framework and our HTML code. </p>
 
 <!-- picture of index.html with link tag -->
 
 <a href="images/article2/image3.png" class="image featured"><img src="images/article2/image3.png" alt="" /></a>
 
-<p>Now if we save and refresh our page… notice our styling changed a bit. That’s because Bootstrap already has some CSS built-in that makes the headers and text look a bit different. If we wanted to, we could overwrite whatever CSS Bootstrap has in our own custom CSS.</p>
+<p>Now if we save and refresh our page, notice our styling changed a bit. That’s because Bootstrap already has some CSS built-in that makes the headers and text look a bit different. If we wanted to, we could overwrite whatever CSS Bootstrap has in our own custom CSS using the <b>!important</b> rule.</p>
 
 <!-- picture of refreshed webpage-->
 
@@ -38,7 +38,7 @@
 <!-- picture with this url http://www.ee-web.co.uk/demos/bootstrap/ -->
 <a href="images/article2/image5.png" class="image featured"><img src="images/article2/image5.png" alt="" /></a>
 
-<p>Bootstrap divides a webpage into <b>rows</b> and <b>columns</b>. Each row is divided into 12 columns and an element (say a paragraph or an image or a header) can take up any number of these columns. You can also have multiple elements on one row. An element could take up all twelve columns or just the three on the right or whatever. Now, no matter what the screen size - the screen is broken up into 12 columns so I can specify how many columns I want for each element on a <b>small</b>, <b>medium</b>, <b>large</b>, and <b>extra-large screen</b>. I can also say that I just want it to take up 6 columns on a medium screen and it will resize itself appropriately for smaller and larger screens. This may be confusing, but don’t worry - we are going to mess with it ourselves. Let’s say I want two different headers on the same row taking up an equal amount of space and a button underneath the second header. We’d have one row and each header would take up 6 of the 12 columns. In code, we would first create the row for our content, making a div with the class <b>row</b>.</p>
+<p>Bootstrap divides a webpage into <b>rows</b> and <b>columns</b>. Each row is divided into 12 columns and an element (say a paragraph or an image or a header) can take up any number of these columns. You can also have multiple elements on one row. An element could take up all twelve columns or just the three on the right or whatever. Now, no matter what the screen size - the screen is broken up into 12 columns so I can specify how many columns I want for each element on a <b>small</b>, <b>medium</b>, <b>large</b>, and <b>extra-large screen</b>. I can also say that I just want it to take up 6 columns on a medium screen and it will resize itself appropriately for smaller and larger screens. This may be confusing, but don’t worry - we are going to mess with it ourselves. Let’s say I want two different headers on the same row each taking up half of the screen and a button underneath the second header. We’d have one row and each header would take up 6 of the 12 columns. In code, we would first create the row for our content, making a div with the class <b>row</b>.</p>
 
 <!-- index.html with <div class = “row”> </div> -->
 <a href="images/article2/image6.png" class="image featured"><img src="images/article2/image6.png" alt="" /></a>
