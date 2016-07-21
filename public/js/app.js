@@ -1,5 +1,7 @@
 var app = angular.module('blondiebits', ['ngRoute'])
 
+angular.module('testing',['djds4rce.angular-socialshare'])
+
 app.config(function ($routeProvider) { 
   $routeProvider 
     .when('/', { 
@@ -21,4 +23,8 @@ app.config(function ($routeProvider) {
     .otherwise({ 
       redirectTo: '/' 
     }); 
+});
+
+angular.module('testing').run(function($FB){
+  $FB.init('1718092488456329');
 });
