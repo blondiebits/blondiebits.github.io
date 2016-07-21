@@ -42,7 +42,7 @@ app.factory('blog',[function() {
 
 		title: "How to look good with Bootstrap",
 
-		subtitle: "Learn the fundamentals of bootstrap in 5 minutes.",
+		subtitle: "Learn the fundamentals of Bootstrap in 5 minutes.",
 
 		author: "Kathryn Hodge",
 
