@@ -1,0 +1,14 @@
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2><a href="https://blondiebytes.github.io/">{{ post.author }}</a></h2>
+				<p>{{ post.author_description }} </p>
+			</div>
+			<div class="meta">
+				<a href="#/author/{{ postIndex }}" class="author"><span class="name">{{ post.author }}</span><img ng-src="{{ post.author_image }}" alt="" /></a>
+			</div>
+		</header>
+
+		<div ng-include="post.author_bio"></div>
+
+	</article>
