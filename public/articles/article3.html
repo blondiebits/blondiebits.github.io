@@ -1,0 +1,102 @@
+<p>Let’s talk about the developer tools in Google Chrome. Google Chrome is a web browser as we all know and it has some hidden developer tools that we can use to manipulate webpages. To check them out, we'll open up a <a href="">live bootstrap website</a> and see what we can do. Keep in mind you can do this with any site.</p>
+
+	<!-- image of the website template -->
+
+<p>One of the development tools is called the Inspector. To access the inspector in Google Chrome, we just Left Click and select Inspect.</p>
+
+	<!-- image of inspect popup -->
+
+<p>On the right hand side, a side-window will pop up that gives us some options.</p>
+
+	<!-- image of the side-window -->
+
+
+<div ng-attr-class= "{{ hideorshow }}">
+
+<p>On the top half, we have HTML and on the bottom half, we have CSS. If we hover over some of the HTML elements, the respective parts are highlighted in the actual webpage. </p>
+
+	<!-- image of highlighted components -->
+
+<p>Now, we can actually change some stuff on the webpage with this code over here. Right now, when we click the arrow button on the website, we are redirected to the about section.</p>
+
+	<!-- highlight where the arrow button code is -->
+
+<p>We could change it so that when we click it, we are redirected to the contact section instead. To do this, we’ll change #about to #contact. </p>
+
+	<!-- Change the code so that the arrow button goes to the #contact section (add boxes) -->
+
+<p>And now, when the button is clicked, we go to the contact section.  Now, we can change the CSS as well - scrolling down, let’s say we want the github button to be red instead of green. We can just go down to this element’s style and set the color property equal to red. </p>
+
+
+
+
+
+	<!-- Extra Content -->
+
+
+<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- Rows -->
+&lt;div class="row"&gt;&lt;/div&gt;
+
+&lt;!-- Columns in Rows -->
+&lt;div class="row"&gt;
+	&lt;div class="col-md-4"&gt;
+	&lt;/div&gt;
+	&lt;div class="col-md-4"&gt;
+	&lt;/div&gt;
+	&lt;div class="col-md-4"&gt;
+	&lt;/div&gt;
+	&lt;!-- col-screenSizeCode-numberOfColumns -->
+	&lt;!-- The number of columns in a given row should add up to 12-->
+&lt;/div&gt;
+
+&lt;!-- Font-Awesome Icons -->
+&lt;i class="fa fa-cloud">&lt;/i>
+&lt;i class="fa fa-heart">&lt;/i>
+&lt;i class="fa fa-car">&lt;/i>
+&lt;!-- Must have the Font-Awesome link tag to use these! -->
+&lt;!-- More icons can be found on the Bootstrap website! -->
+</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+			<h4>Plus a Little Extra:</h4>
+
+			<pre><code> &lt;!-- Bootstrap Icons -->
+&lt;i class="glyphicon glyphicon-user">&lt;/i>
+&lt;i class="glyphicon glyphicon-envelope">&lt;/i>
+&lt;i class="glyphicon glyphicon-thumbs-up">&lt;/i>
+&lt;!-- Must have the Bootstrap link tag to use these! -->
+&lt;!-- More icons can be found on the Bootstrap website! -->
+
+&lt;!-- Bootstrap Forms -->
+&lt;form role="form">
+	&lt;div class="form-group">
+    	&lt;label for="email">Email address:&lt;/label>
+    	&lt;input type="email" class="form-control" id="email">
+  	&lt;/div>
+  	&lt;div class="form-group">
+    	&lt;label for="pwd">Password:&lt;/label>
+    	&lt;input type="password" class="form-control" id="pwd">
+  	&lt;/div>
+  	&lt;div class="checkbox">
+    &lt;label>&lt;input type="checkbox">Remember me&lt;/label>
+  	&lt;/div>
+&lt;/form></code></pre>
+</div>
+</div>
+
+<h4 style="text-align: center">YouTube Video</h4>
+
+<div class="container">
+<iframe src="https://www.youtube.com/embed/yalxT0PEx8c" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<br>
+
+<p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+
+</div>
