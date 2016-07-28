@@ -76,7 +76,7 @@ app.factory('blog',[function() {
 
 
 	return {
-		posts : [post2, post1, post0]
+		posts : [post3, post2, post1, post0]
 	}
 
 }])
