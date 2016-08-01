@@ -110,7 +110,7 @@ function countDown() {
 			<h4>Things to Remember:</h4>
 
 <pre><code>&lt;!-- How to Import a JS File-->
-&lt;script src="pathToFile/fileName">&lt;/script>
+&lt;script src="pathToFile/fileName.js">&lt;/script>
 
 &lt;!-- How to Write a Function --&gt;
 function functionName() {
@@ -129,7 +129,11 @@ var nameOfVariable = value;
 &lt;!-- How to Use an If-Statement --&gt;
 if (condition) {
 	// do this if the condition is true
-}</code></pre>
+}
+
+&lt;!-- How to Set Text of HTML Element in JS --&gt;
+document.getElementById("idName").innerHTML = 'newTextInElt'
+</code></pre>
 </div>
 
 <div class="6u 12u(mobile)">
@@ -151,16 +155,14 @@ var y = 11; // a variable named y
 var z = x * y; // z evaluates to 110
 // You can also add, subtract, divide, and mod. 
 
-&lt;!-- Create an Array, Iterate and List Contents -->
-var colors = ["Yellow", "Blue", "Pink"]; // an array
-var text = ""; // a variable named text
-// For-loop lists all of the colors
-for (var i = 0; i &lt; colors.length; i++) {
-	// Adding each color to the text with a breakline
-    text += colors[i] + "&lt;br>";
+&lt;!-- Writing a Function with Parameters -->
+function functionName(x, y) {
+	var r = x + y;
+    document.getElementById("result").innerHTML = r;
 }
-document.getElementById("colorList").innerHTML = text;
-</code></pre>
+
+&lt;!-- Calling a Function with Parameters -->
+&lt; button onclick="functionName(5, 10)">buttonName&lt;/button></code></pre>
 </div>
 </div>
 

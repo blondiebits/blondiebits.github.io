@@ -74,6 +74,24 @@ app.factory('blog',[function() {
 
 	}
 
+		var post4 = {
+
+		title: "Interactive Websites with JS in 5 Minutes",
+
+		subtitle: "Learn how to use JavaScript to make static websites interactive in 5 minutes.",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, August 5",
+
+	}
+
 
 	return {
 		posts : [post3, post2, post1, post0]
