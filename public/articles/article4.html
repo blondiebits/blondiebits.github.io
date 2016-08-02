@@ -2,7 +2,11 @@
 
 <!-- image of changing website -->
 
+<a href="images/article4/image0.png" class="image featured"><img src="images/article4/image0.png" alt="" /></a>
+
 <p>First, we’ll use Sublime to create an index.html file with the usual boilerplate information and we'll also create a quick button here in our body tag. </p>
+
+<a href="images/article4/image1.png" class="image featured"><img src="images/article4/image1.png" alt="" /></a>
 
 <!-- image of HTML doc with <DOCTYPE! html>
 
@@ -22,11 +26,15 @@
 
 <p>We’ll take a look at the page and there is our button.</p>
 
+<a href="images/article4/image2.png" class="image featured"><img src="images/article4/image2.png" alt="" /></a>
+
 <!-- image of webpage--> 
+
+<p>Then we’ll create a js folder and put a file named script.js inside of it - this name is just convention. Next, we’ll link this JS file to our code similar to how we did for our CSS and for the bootstrap framework. It will go inside our head tag.</p>
 
 <div ng-attr-class= "{{ hideorshow }}">
 
-<p>Then we’ll create a js folder and put a file named script.js inside of it - this name is just convention. Next, we’ll link this JS file to our code similar to how we did for our CSS and for the bootstrap framework. It will go inside our head tag.</p>
+<a href="images/article4/image3.png" class="image featured"><img src="images/article4/image3.png" alt="" /></a>
 
 <!-- picture of files and how they are laid out in Finder on the right, code with script link on the left: <script src=”js/script.js”></script> -->
 
@@ -34,10 +42,13 @@
 
 <!-- picture of the same code but with this 
 <p id="hiddenMessage" style="display:none">You are going on a cruise!</p> -->
+<a href="images/article4/image4.png" class="image featured"><img src="images/article4/image4.png" alt="" /></a>
 
 <p>Now refreshing the page, we see that although we have written this element, it is hidden because we set the display property to none.</p>
 
 <!-- refreshed blank page -->
+
+<a href="images/article4/image5.png" class="image featured"><img src="images/article4/image5.png" alt="" /></a>
 
 <p>
 All we need to do is write the JavaScript so that when we click the button, the message is revealed so we’ll go to our script.js and write a function. To create a function, we write the keyword function and then the name of the function - here, we’ll say it’s revealMessage. If we needed to add parameters to the function, then we would put those in between the parentheses, but we don't need to worry about that right now so we won't put anything inside.Then, we add the body of our function - what it was actually do when revealMessage() is called. Inside our function, we access the variable document (aka HTML document) and then get the element with the id hiddenMessage (our paragraph we created before). Next, we access this element’s style in other words it’s CSS and set its display property to the value 'block.'</p>
@@ -47,19 +58,27 @@ All we need to do is write the JavaScript so that when we click the button, the 
 }
 -->
 
+<a href="images/article4/image6.png" class="image featured"><img src="images/article4/image6.png" alt="" /></a>
+
 <p>Now, we have this function revealMessage, but it isn’t connected to the button just yet. Going back to our HTML, we’ll add the onclick attribute to our button and give it the value of revealMessage. This basically says go run the revealMessage function when this button is clicked.</p>
 
 <!-- picture of index.html with <button type=”button” onclick=”revealMessage()”>Click me!</button> -->
 
+<a href="images/article4/image7.png" class="image featured"><img src="images/article4/image7.png" alt="" /></a>
+
 <p>Refreshing the page, let’s test this out. When we click the button, the message is displayed.</p>
 
 <!-- picture of before and after we click the button (two webpages) -->
+
+<a href="images/article4/image8.png" class="image featured"><img src="images/article4/image8.png" alt="" /></a>
 
 <p>We just used JavaScript to manipulate the value of the display property, but this can work for almost any property in CSS. We can use JavaScript to change images or the color of the background or whatever based on what the user does.</p>
 
 <p>While this may seem cool, CSS Manipulation isn’t the only thing JavaScript can do. We could also add a countdown to a given vacation so that each time I pressed a countdown button, the vacation date would be closer. Going back to the code, we’ll add a button with the id countDownButton and the onclick action countDown().</p>
 
 <!-- picture of index.html with <button type="button" id="countDownButton" onclick="countDown()">10</button> -->
+
+<a href="images/article4/image9.png" class="image featured"><img src="images/article4/image9.png" alt="" /></a>
 
 <p>Next, we’ll create a div and put these style and id attributes from the paragraph on the div so that the message and countdown are both hidden.</p>
 
@@ -69,7 +88,11 @@ All we need to do is write the JavaScript so that when we click the button, the 
 	</div>
 -->
 
+<a href="images/article4/image10.png" class="image featured"><img src="images/article4/image10.png" alt="" /></a>
+
 <p>Then, going over to the JavaScript to make the countdown work, we’ll write our keyword function and the name of the function countDown. Again, we will give it no parameters and move on to the implementation of the function. We’ll create a variable with the keyword var and give it the name of currentVal. Its value will be the text of the element with the id countDownButton, which can be retrieved using the innerHTML property. Then we will have another variable called newVal and give it the value of the currentVal minus 1. This is how we count down! Next, we’ll set the text of the countDownButton to the new value by grabbing it with getElementById and setting its innerHTML property to newVal.</p>
+
+<a href="images/article4/image11.png" class="image featured"><img src="images/article4/image11.png" alt="" /></a>
 
 <!-- script.js file with function countDown() {
 	var currentVal = document.getElementById("countDownButton").innerHTML;
@@ -79,10 +102,13 @@ All we need to do is write the JavaScript so that when we click the button, the 
 
 <p>This will give us a countdown and refreshing the page… We have our countdown!</p>
 
+<a href="images/article4/image12.png" class="image featured"><img src="images/article4/image12.png" alt="" /></a>
+
 <!-- three pictures count-downing (webpages) one goes below zero--> 
 
 <p>However, you might notice that sometimes our countdown goes below zero. To prevent this, we can add something called an if-statement. Basically we’ll say that the default new value for the button is zero, but if the current value of the button is 1 or higher, then we’ll subtract (countdown) one and let that be the new value for the button. Otherwise, the value of the button will be zero, the default value.</p>
 
+<a href="images/article4/image13.png" class="image featured"><img src="images/article4/image13.png" alt="" /></a>
 
 <!-- script.js
 function countDown() {
@@ -98,6 +124,8 @@ function countDown() {
 -->
 
 <p>Refreshing the page, now we have a countdown that makes sense and doesn’t go below zero.</p>
+
+<a href="images/article4/image14.png" class="image featured"><img src="images/article4/image14.png" alt="" /></a>
 
 <!-- three pictures count-downing (webpages) don't go below 0 -->
 

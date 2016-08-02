@@ -76,9 +76,9 @@ app.factory('blog',[function() {
 
 		var post4 = {
 
-		title: "Interactive Websites with JS in 5 Minutes",
+		title: "Interactive Websites with JS in 7 Minutes",
 
-		subtitle: "Learn how to use JavaScript to make static websites interactive in 5 minutes.",
+		subtitle: "Learn how to use JavaScript to make static websites interactive in 7 minutes.",
 
 		author: "Kathryn Hodge",
 
