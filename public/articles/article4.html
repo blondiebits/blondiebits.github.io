@@ -1,10 +1,10 @@
-<p>JavaScript is a programming language we can use to make a website interactive. When we search something on Google or click a link, our website changes - that’s what JavaScript allows us to do.</p>
+<p><b>JavaScript</b> is a programming language we can use to make a website interactive. When we search something on Google or click a link, our website changes - that’s what JavaScript allows us to do.</p>
 
 <!-- image of changing website -->
 
 <a href="images/article4/image0.png" class="image featured"><img src="images/article4/image0.png" alt="" /></a>
 
-<p>First, we’ll use Sublime to create an index.html file with the usual boilerplate information and we'll also create a quick button here in our body tag. </p>
+<p>First, we’ll use Sublime to create an <b>index.html</b> file with the usual boilerplate information and we'll also create a quick button here in our body tag. </p>
 
 <a href="images/article4/image1.png" class="image featured"><img src="images/article4/image1.png" alt="" /></a>
 
@@ -30,7 +30,7 @@
 
 <!-- image of webpage--> 
 
-<p>Then we’ll create a js folder and put a file named script.js inside of it - this name is just convention. Next, we’ll link this JS file to our code similar to how we did for our CSS and for the bootstrap framework. It will go inside our head tag.</p>
+<p>Then, we’ll create a <b>js folder</b> and put a file named <b>script.js</b> inside of it - this name is convention. Next, we’ll <b>link</b> this JS file to our code just like we did for our CSS and bootstrap framework in previous tutorials. It will go inside our head tag.</p>
 
 <div ng-attr-class= "{{ hideorshow }}">
 
@@ -38,33 +38,33 @@
 
 <!-- picture of files and how they are laid out in Finder on the right, code with script link on the left: <script src=”js/script.js”></script> -->
 
-<p>And now we have JavaScript! Nothing will appear different as of yet, but we are set up and ready to code. Now let’s say we wanted to surprise our friend with a hidden message. When they first load the screen, only the Click Me button would appear, but if they clicked the button, the hidden message would reveal itself. So first, let’s make this hidden message… and we’ll add a little CSS so that it is hidden at first...</p>
+<p>And now we have JavaScript! Nothing will appear different as of yet, but we are set up and ready to code. Now let’s say we wanted to surprise our friend with a hidden message. When they first load the screen, only the Click Here button would appear, but if they clicked the button, the hidden message would reveal itself. So first, let’s make this hidden message and we’ll add a little CSS so that it is hidden at first...</p>
 
 <!-- picture of the same code but with this 
 <p id="hiddenMessage" style="display:none">You are going on a cruise!</p> -->
 <a href="images/article4/image4.png" class="image featured"><img src="images/article4/image4.png" alt="" /></a>
 
-<p>Now refreshing the page, we see that although we have written this element, it is hidden because we set the display property to none.</p>
+<p>Now refreshing the page, we see that although we have written this element in code, it is hidden because we set the <b>display property</b> to none.</p>
 
 <!-- refreshed blank page -->
 
-<a href="images/article4/image5.png" class="image featured"><img src="images/article4/image5.png" alt="" /></a>
+<a href="images/article4/image2.png" class="image featured"><img src="images/article4/image2.png" alt="" /></a>
 
 <p>
-All we need to do is write the JavaScript so that when we click the button, the message is revealed so we’ll go to our script.js and write a function. To create a function, we write the keyword function and then the name of the function - here, we’ll say it’s revealMessage. If we needed to add parameters to the function, then we would put those in between the parentheses, but we don't need to worry about that right now so we won't put anything inside.Then, we add the body of our function - what it was actually do when revealMessage() is called. Inside our function, we access the variable document (aka HTML document) and then get the element with the id hiddenMessage (our paragraph we created before). Next, we access this element’s style in other words it’s CSS and set its display property to the value 'block.'</p>
+All we need to do is write the JavaScript so that when we click the button, the message is revealed so we’ll go to our script.js and write a function. To create a function, we will write the <b>keyword function</b> and then the <b>name</b> of the function - here, it’s revealMessage. If we needed to add <b>parameters</b> to the function, then we would put those in between the parentheses, but we don't need to worry about that right now so we won't put anything inside. Then, we can add the <b>body</b> of our function - what it will actually do when revealMessage() is called. Inside our function, we'll access the <b>variable</b> document (aka our HTML document) and then get the element with the <b>id hiddenMessage</b> (our paragraph we created before). Next, we will access this element’s <b>style</b>, in other words it’s CSS, and set its display property to the value <b>'block'</b>.</p>
 
 <!-- picture of script.js file with function revealMessage() {
 	document.getElementById(“hiddenMessage”).style.display = ‘block’;
 }
 -->
 
-<a href="images/article4/image6.png" class="image featured"><img src="images/article4/image6.png" alt="" /></a>
+<a href="images/article4/image6.png" class="image featured"><img src="images/article4/image5.png" alt="" /></a>
 
-<p>Now, we have this function revealMessage, but it isn’t connected to the button just yet. Going back to our HTML, we’ll add the onclick attribute to our button and give it the value of revealMessage. This basically says go run the revealMessage function when this button is clicked.</p>
+<p>Now, we have this <b>function revealMessage</b>, but it isn’t connected to the button just yet. Going back to our HTML, we’ll add the <b>onclick attribute</b> to our button and give it the value of <b>revealMessage</b>. This basically says go run the revealMessage function when this button is clicked.</p>
 
 <!-- picture of index.html with <button type=”button” onclick=”revealMessage()”>Click me!</button> -->
 
-<a href="images/article4/image7.png" class="image featured"><img src="images/article4/image7.png" alt="" /></a>
+<a href="images/article4/image7.png" class="image featured"><img src="images/article4/image6.png" alt="" /></a>
 
 <p>Refreshing the page, let’s test this out. When we click the button, the message is displayed.</p>
 
@@ -72,9 +72,9 @@ All we need to do is write the JavaScript so that when we click the button, the 
 
 <a href="images/article4/image8.png" class="image featured"><img src="images/article4/image8.png" alt="" /></a>
 
-<p>We just used JavaScript to manipulate the value of the display property, but this can work for almost any property in CSS. We can use JavaScript to change images or the color of the background or whatever based on what the user does.</p>
+<p>We just used JavaScript to <b>manipulate</b> the value of the display property, but this can work for almost any property in CSS. We can use JavaScript to change images or the color of the background or whatever based on what the user does.</p>
 
-<p>While this may seem cool, CSS Manipulation isn’t the only thing JavaScript can do. We could also add a countdown to a given vacation so that each time I pressed a countdown button, the vacation date would be closer. Going back to the code, we’ll add a button with the id countDownButton and the onclick action countDown().</p>
+<p>While this may seem cool, CSS Manipulation isn’t the only thing JavaScript can do. We could also add a countdown to this vacation so that each time the user pressed the countdown button, the vacation date would draw closer. Going back to the code, we’ll add a button with the <b>id countDownButton</b> and the <b>onclick action countDown()</b>.</p>
 
 <!-- picture of index.html with <button type="button" id="countDownButton" onclick="countDown()">10</button> -->
 
@@ -90,7 +90,7 @@ All we need to do is write the JavaScript so that when we click the button, the 
 
 <a href="images/article4/image10.png" class="image featured"><img src="images/article4/image10.png" alt="" /></a>
 
-<p>Then, going over to the JavaScript to make the countdown work, we’ll write our keyword function and the name of the function countDown. Again, we will give it no parameters and move on to the implementation of the function. We’ll create a variable with the keyword var and give it the name of currentVal. Its value will be the text of the element with the id countDownButton, which can be retrieved using the innerHTML property. Then we will have another variable called newVal and give it the value of the currentVal minus 1. This is how we count down! Next, we’ll set the text of the countDownButton to the new value by grabbing it with getElementById and setting its innerHTML property to newVal.</p>
+<p>Going over to the JavaScript to make the countdown work, we’ll write our keyword function and name the function <b>countDown</b>. Again, we will give it no parameters and move on to the implementation of our method. We’ll create a variable with the <b>keyword var</b> and name it <b>currentVal</b>. Its value will be the text of the element with the id countDownButton, which can be retrieved using the <b>innerHTML property</b>. Then, we'll have another variable called <b>newVal</b> and give it the value of the currentVal minus 1 - this is how we countdown! Next, we’ll set the text of the countDownButton to the new value by grabbing it with <b>getElementById</b> function and setting its innerHTML property to newVal.</p>
 
 <a href="images/article4/image11.png" class="image featured"><img src="images/article4/image11.png" alt="" /></a>
 
@@ -100,13 +100,13 @@ All we need to do is write the JavaScript so that when we click the button, the 
 	document.getElementById("countDownButton").innerHTML = newVal;
 } -->
 
-<p>This will give us a countdown and refreshing the page… We have our countdown!</p>
+<p>This will give us a countdown and refreshing the page… We have our countdown button!</p>
 
 <a href="images/article4/image12.png" class="image featured"><img src="images/article4/image12.png" alt="" /></a>
 
 <!-- three pictures count-downing (webpages) one goes below zero--> 
 
-<p>However, you might notice that sometimes our countdown goes below zero. To prevent this, we can add something called an if-statement. Basically we’ll say that the default new value for the button is zero, but if the current value of the button is 1 or higher, then we’ll subtract (countdown) one and let that be the new value for the button. Otherwise, the value of the button will be zero, the default value.</p>
+<p>However, you might notice that sometimes our countdown goes below zero. To prevent this, we can add something called an <b>if-statement</b>. Basically we’ll say that the <b>default</b> new value for the button is zero, but if the current value of the button is 1 or higher, then we’ll subtract (countdown) one and let that be the new value for the button. Otherwise, the value of the button will be zero, the default value.</p>
 
 <a href="images/article4/image13.png" class="image featured"><img src="images/article4/image13.png" alt="" /></a>
 
@@ -129,7 +129,7 @@ function countDown() {
 
 <!-- three pictures count-downing (webpages) don't go below 0 -->
 
-<p>That’s an introduction to JavaScript and how it can make your websites interactive. Here, we wrote vanilla JavaScript, meaning we did not use any extra libraries in our code. Next Friday, we’ll learn about a JavaScript library called jQuery and how it can make things a bit easier. See ya then.</p>
+<p>That’s an introduction to JavaScript and how it can make your websites <b>interactive</b>. Here, we wrote <b>vanilla JavaScript</b>, meaning we did not use any extra libraries in our code. Next Friday, we’ll learn about a <b>JavaScript library</b> called <b>jQuery</b> and how it can make things a bit easier for us. See ya then.</p>
 
 	<!-- Extra Content -->
 
