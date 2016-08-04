@@ -94,7 +94,7 @@ app.factory('blog',[function() {
 
 
 	return {
-		posts : [post3, post2, post1, post0]
+		posts : [post4, post3, post2, post1, post0]
 	}
 
 }])
