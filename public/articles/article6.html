@@ -1,0 +1,151 @@
+<p><b>Angular.js</b> is a <b>structural framework</b> for dynamic web apps. If that is confusing, don’t worry! Basically, it means we can extend HTML’s syntax to express an application's components more fully. To start, we’ll create an <b>index.html</b> document and a <b>js folder</b>. </p>
+
+<!-- Create index.html and js folder -->
+
+<p>Next, we’ll import the Angular.js framework just like we did for Bootstrap and JQuery. For this tutorial, we will be using <b>Angular 1</b>.</p>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"> -->
+
+<p>In this tutorial, we’ll be making a <b>to-do list application</b>. To do this, we’ll make an <b>app.js</b> file inside of our js folder and write a line of code that <b>initializes</b> our app (also called <b>module</b>) for us.</p>
+
+<!-- Init app in app.js -->
+
+<p>To connect our app.js file to the HTML code, we’ll <b>link</b> it over in our index.html. Usually, we put this type of import towards the end of the body.</p>
+
+<!-- Import app.js -->
+
+<p>Although our app.js is imported, there's still more to do (no pun intended). We need to connect our ToDoList module to our HTML code. To do this, we’ll write <b>ng-app="ToDoList"</b> as an <b>attribute</b> of the body. This states that everything in the body will be a part of the ToDoList application. Furthermore, this attribute is called an <b>angular attribute</b> because it is part of angular and not plain html.</p>
+
+<!-- Connect with ng-app -->
+
+<p>Next, we’ll create our <b>controller</b>, which will handle the data for our application. To do this, we’ll make a <b>controllers folder</b> inside of our js folder and add a <b>MainController.js</b> file.</p> 
+
+<!-- show file setup -->
+
+<p>Now, we can write some code for our <b>MainController</b>.</p>
+
+<!-- app.controller("MainController", function($scope) {
+
+}); -->
+
+<p>Just like most of our files, we'll <b>import</b> this into our index.html and put it right before the <b>closing body tag</b>.</p>
+
+<!-- Controllers 
+	<script src="js/controllers/MainController.js"></script>
+-->
+
+<p>Now, going back to the MainController, we can <b>set</b> some values in the <b>scope object</b>. For now, we can think of the scope object as something everything in our program can talk to. The <b>view</b> aka our index.html can <b>see what’s in the scope</b> and our <b>controller</b> can <b>set what’s in the scope</b>. This is how the two files communicate and can pass information to and from each other - through the scope object! Thinking in this way, we’ll write some “to-do list” items and put them in the scope of our controller.</p>
+
+<!-- $scope.list = ["Clean my room", "Go to the store", "Study Cracking the Coding Interview"]; -->
+
+<p>Here, we added a <b>list attribute</b> to the scope and set the value of this attribute to an array containing “Clean my room”, “Go to the store”, and “Study Cracking the Coding Interview”. Now, how does our view (our index.html) know about this controller? Sure, the file is imported, but there’s one other thing we have to do. We need to attach it to an element in the HTML code. We’ll attach it by creating a div, accessing its ng-controller controller attribute, and giving it the value "MainController."</p>
+
+<!-- <div ng-controller="MainController">
+</div> -->
+
+
+<p>To <b>access</b> the to-do list items in <b>scope</b>, we can write some more code.</p>
+
+<!-- <li>{{ list[0] }}</li>
+	<li>{{ list[1] }}</li>
+	<li>{{ list[2] }}</li> -->
+
+<p>The <b>curly braces</b> are called <b>handlebars</b> and they note that these items are coming from the scope object. Without them, our list items would have the literal text list[0], list[1] instead of our actual to-do list items. Refreshing the page, we see the items in our list!</p>
+
+<!-- Refresh the page -->
+
+<p>However, looking back at our code, this is somewhat <b>inefficient</b> and only works if we have exactly three items in the list. Instead, we can use an <b>angular directive</b> called <b>ng-repeat</b> to iterate through the items in the list. We'll learn more about directives later, but for now, just think of them as a tool that helps make our code more modular and concise. We’ll create another div and add <b>ng-repeat</b> as an attribute.</p>
+
+<!-- <div ng-repeat="item in list">
+		<li> {{ item }}</li>
+	</div> -->
+
+<p>Here, we name each thing in the list an <b>item</b> and <b>for each item</b>, we put it in a <b>li tag</b>. Again, we are accessing the <b>list attribute</b> from the <b>scope object</b>, which was set in the <b>controller</b>. The list attribute has the <b>value of an array</b> that has our to-do’s inside of it. We use the <b>ng-repeat directive</b> to go through the items and put each in their own li tag.</p>
+
+<p>One last thing before we go! We can also add an <b>input field</b> in our HTML so we can add things to our to-do list from the webpage. To do this, we’ll write some more code in our index.html.</p>
+
+<!-- <input ng-model="addToDo"> -->
+
+<p>This creates an <b>input field</b> and <b>ng-model</b> (another angular directive) binds the input to the <b>variable addToDo</b>. This addToDo is an <b>attribute</b> of the <b>controller’s scope</b> object so it can be accessed again in the index.html file and in the MainController. We’ll also create a <b>button</b> so when the button is pressed, the item in the input is added to the list.</p>
+
+<!-- <button ng-click="addItem()">Add This To-Do</button> -->
+
+<p>When we click the button, the <b>addItem()</b> function will be run - but this function doesn’t exist yet! Going back to our MainController.js, we’ll add some more code.</p>
+
+<!-- $scope.addItem = function() {
+  		$scope.list.push($scope.addToDo);
+  	}
+  	-->
+
+<p>Here, we add a new <b>attribute</b> to our scope, <b>addItem</b>, and give it the value of a <b>function</b>. Inside the function, we access our list and push on the addToDo variable, which has the value of the input field from the index.html. Now, if we refresh our page and try to add a to-do… we can!</p>
+
+<!-- Refresh webpage and add an item -->
+
+<p>However, when we refresh the page, our added data will disappear because we haven’t saved it anywhere. Something to think about. In next week’s tutorial, we'll talk more about <b>angular.js</b> and go into directives, services, routing, and accessing an endpoint from your code! See ya next friday.</p>
+
+<!-- Extra Content -->
+
+<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- How to Import Angular.js -->
+&lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">&lt;/script>
+
+&lt;!-- How to How to Initialize a Module --&gt;
+var app = angular.module('ModuleName', []);
+
+&lt;!-- How to Create a Controller --&gt;
+app.controller('ControllerName', ['$scope', function($scope) { 
+  	$scope.text = "Value for Text Attribute in Scope"
+}]);
+
+&lt;!-- What You Need To Import --&gt;
+1. angular framework
+2. app.js (modules)
+3. controller files
+
+&lt;!-- What You Need To Attach in index.html --&gt;
+1. application with ng-app
+2. controller with ng-controller
+</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+			<h4>Some Built-In Directives:</h4>
+
+			<pre><code>&lt;!-- ng-repeat -->
+// loop through a collection / array
+&lt;div ng-repeat= "color in colors">
+	&lt;li> {{ color }} &lt;/li>
+&lt;
+
+&lt;!-- ng-click -->
+// execute a method or expression when element is clicked
+&lt;button ng-click="changeBackgroundColor()">&lt;/button>
+
+&lt;!-- ng-src -->
+// use angular to set a source path for an image
+&lt;img ng-src="http://www.myblog.com/article/images/{{ id }}">
+
+&lt;!-- ng-href -->
+// use angular to set the source for a link
+&lt;a ng-href="http://www.myblog.com/article/{{ id }}">click here!&lt;/a>   
+
+&lt;!-- ng-model -->
+// bind input elements to scope attributes
+&lt;input ng-model="name">&lt;/input></code></pre>
+</div>
+</div>
+
+<h4 style="text-align: center">YouTube Video</h4>
+
+<div class="container">
+<iframe src="https://www.youtube.com/embed/ueozQ9Hagbc" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<br>
+
+<p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+
+

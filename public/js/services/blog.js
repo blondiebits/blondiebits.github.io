@@ -92,11 +92,29 @@ app.factory('blog',[function() {
 
 	}
 
-		var post5 = {
+	var post5 = {
 
 		title: "Using a JS Library: jQuery in 6 Minutes",
 
-		subtitle: "Dynamically change a website with a JavaScript library (jQuery) in 6 minutes!",
+		subtitle: "Dynamically change a website with the jQuery Library in 6 minutes!",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, August 12",
+
+	}
+
+	var post6 = {
+
+		title: "Learn the Basics of Angular.js in 5 minutes",
+
+		subtitle: "Create your first angular.js application in this tutorial. Learn about controllers, scope, and more!",
 
 		author: "Kathryn Hodge",
 
