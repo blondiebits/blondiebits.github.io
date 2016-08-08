@@ -74,7 +74,7 @@ app.factory('blog',[function() {
 
 	}
 
-		var post4 = {
+	var post4 = {
 
 		title: "Interactive Websites with JS in 7 Minutes",
 
@@ -89,6 +89,24 @@ app.factory('blog',[function() {
 		author_bio: "bio/kathryn_bio.html",
 
 		date: "Friday, August 5",
+
+	}
+
+		var post5 = {
+
+		title: "Using a JS Library: jQuery in 6 Minutes",
+
+		subtitle: "Learn how to make your websites interactive with a JavaScript library called jQuery in 6 minutes! We'll select some elements and dynamically change the webpage's CSS based on what the user does.",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, August 12",
 
 	}
 

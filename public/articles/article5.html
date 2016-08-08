@@ -1,0 +1,147 @@
+<p><b>JQuery</b> is a <b>library</b> that contains lots of methods which make it much easier to manipulate HTML documents, add animation, along with a bunch of other things. Since JQuery is a library, it has an <b>API</b> that we can use to access its functionality.</p>
+ 
+<!-- Open JQuery Website -->
+
+<p>API stands for <b>Application Programming Interface</b> and it basically states the methods or functions we can call inside our code if we import the library.</p>
+
+<!-- Open API Website -->
+
+<p>Let's click on <b>.addClass()</b> method and see what it does.</p>
+
+<!-- .addClass() method -->
+
+<p>Say we had a class named <b>blue</b> that made its elements have blue text. We could use the .addClass() method and add the blue class to all of the <b>p</b> elements with something similar to this where we’d have <b>$("p").addClass("blue")</b>. This may be confusing right now, but don’t worry, we’ll figure it out.</p>
+
+<p>To start, we first need to create an <b>index.html</b> and a <b>script.js</b> file. We’ll also put the script.js file in a folder named <b>js</b> and then <b>link</b> our script.js file in our index.html file. This should look pretty familiar since we've done it in <a href="http://blondiebits.herokuapp.com/#/4">other tutorials</a>.</p>
+
+<!-- Create index.html file, script.js file, and js folder --> 
+
+<p>Just like we imported bootstrap in the <a href="http://blondiebits.herokuapp.com/#/2">bootstrap tutorial</a>, we need to <b>import jQuery</b> in this post. We can either download it from the Internet and link it locally or we can link it from the Internet. We’ll do the second and after searching for the jQuery <a href="http://www.webopedia.com/TERM/C/CDN.html">CDN</a>, we’ll add it to our code.</p>
+
+<!-- Add jQuery link to code -->
+
+<p>Make sure to add it <b>above</b> the our script.js link because we will need to use jQuery in this file. With our jQuery in place, we’ll add one line of HTML code, a header. We’ll add some <b>styling</b> that puts it in the center of the page and gives it a white text color. We can also give it the <b>id hidden</b> and the header will say "I was hidden!".</p>
+
+<!-- Add <h1 style="text-align: center; color:white;" id="hidden">I was hidden!</h1> -->
+
+<p>Now, when we refresh the page, we'll see that the header text is there, but we can't see it unless we highlight it.</p>
+
+<!-- Refresh the page -->
+
+<p>With jQuery and CSS, we could make it so that when we hover over it, the text of the header becomes black. To do this, we’ll go into our <b>script.js</b> file and write some code.</p>
+
+<!-- $(document).ready(function(){
+    $("#hidden").hover(function(){
+       $(this).css("color", "black");
+    },
+  function(){
+    });
+}); -->
+
+<p>Here, the <b>ready function</b> makes sure that the <a href="https://www.w3.org/DOM/">DOM</a> (for now, our HTML elements) have loaded. Once they are loaded, we <b>select</b> our element with the hidden id and call the <b>hover function</b> on it. This means when we over hover the element, the function on lines 2 - 4 will be run. The function will select <b>"this"</b> element (the element with the id hidden) and in the element's CSS, the <b>color property</b> will be set to the <b>value black</b>. You could do this for any element, ID, or class and set any property to any value. Next, we have the <b>callback function</b> on lines 5-6 and this is something you have to write out even if you don’t use it. We will leave it empty for now and come back to it later.</p>
+
+<!-- Refresh the page (3 pages - one empty, one hovering over, one showing it but not hovering -->
+
+<p>Now, when we refresh the page and hover over the header, the text turns black. However, when we stop hovering over the header, the text remains black. What if we want to <b>"re-hide"</b> our message after hovering over it? Going back to the code we can implement our callback function. This will be called once we <b>"leave"</b> or stop hovering over our header, the element with the ID hidden. Let's add some more code.</p>
+
+<!-- $(document).ready(function(){
+    $("#hidden").hover(function(){
+       $(this).css("color", "black");
+    },
+    function(){
+        $(this).hide();
+    });
+});-->
+
+<p>Here, we select "this" element again, which is the element with the ID hidden, and hide it from the viewer. This function as with the .css, .hover, and .ready function are built into the jQuery library so <b>we don’t need to worry about how they are implemented</b>. We just need to know the end result. Here, the <b>hide function</b> hides "this" element on the webpages. Essentially, this just sets the <b>display property</b> of "this" element to none, but using .hide() makes the code a bit more concise. Let's see what happens when we refresh the page.</p>
+
+
+<!-- Refresh the page (3 pages, one empty, one hovering over, one attempting to find it again but can't) -->
+
+<p>We hover over the header and leave it. After, the header element is gone - even when we try highlighting it, it cannot be found. With this program, we hid a message in plain sight, displayed the message while the mouse was pointed on it, and then made it disappear when the mouse left it.</p>
+
+<p>For another quick example, we’ll add a <b>button</b> back in our HTML and make it so an alert shows up on the page when we click the button.</p>
+
+<!-- <button>Alert me!</button> -->
+
+<p>Now, we'll write the JavaScript using the jQuery library to make the button <b>interactive</b>.</p>
+
+<!-- $(“button”).click(function() {
+	alert(“I’m alerting you!”)
+}); -->
+
+<p> Here, we <b>select</b> all the buttons on the page and when one is <b>clicked</b>, we run the function. The function uses the <b>alert method</b> (built into HTML) to alert the user on screen with the message "I’m alerting you!". Going back to our webpage, we’ll refresh and see what our alert looks like.</p>
+
+<!-- Refresh the webpage show before and after button alert-->
+
+<p>And there’s our alert! Could we have done this with <b>plain vanilla JavaScript</b>? Yes, but using the <b>jQuery library</b> makes a lot of this much <b>easier</b> to code and easier to read later on. Next week, we’ll talk about <b>angular.js</b>, which is a structural JavaScript <b>framework</b> that helps you build dynamic web apps. For the first time in the series, we won’t be hard-coding our content - but we will be getting it from somewhere else. I hope you learned something in this week's post and I’ll see you next Friday.</p>
+
+<!-- Extra Content -->
+
+<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- How to Import jQuery -->
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">&lt;/script>
+
+&lt;!-- How to use a jQuery Method --&gt;
+ $("button").click(function() {
+	// what you want to do when button clicked
+});
+
+&lt;!-- How to Create a Callback Function --&gt;
+$(document).ready(function(){
+    $("#idName").hover(function(){
+      // do this when we hover over the element with id idName
+    },
+  function(){ // &lt;-- callback function
+  		// do this when we stop hovering over the element with id idName
+    });
+});
+
+&lt;!-- How to Dynamically Set CSS in jQuery -->
+$(p).css("font-style", "italic");</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+			<h4>Plus a Little Extra:</h4>
+
+			<pre><code>&lt;!-- How to Select a Class in jQuery -->
+$(".className").fadeIn();
+
+&lt;!-- How to Animate Text -->
+$("p").animate({left: '250px'});
+// this uses animation to move all of the p elements left by 250px
+
+&lt;!-- Reveal Text After Some Time -->
+ $("p").show(1000);
+
+&lt;!-- Modify Input Fields -->
+$("input").focus(function(){
+    // do this when user clicks the input field
+});
+$("input").blur(function(){
+    // do this when input field is not clicked
+});
+
+</code></pre>
+</div>
+</div>
+
+<h4 style="text-align: center">YouTube Video</h4>
+
+<div class="container">
+<iframe src="https://www.youtube.com/embed/ueozQ9Hagbc" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<br>
+
+<p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+
+
+
+
+
+
+
