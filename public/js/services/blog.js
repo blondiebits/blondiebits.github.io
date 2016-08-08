@@ -124,7 +124,7 @@ app.factory('blog',[function() {
 
 		author_bio: "bio/kathryn_bio.html",
 
-		date: "Friday, August 12",
+		date: "Friday, August 19",
 
 	}
 

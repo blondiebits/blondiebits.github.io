@@ -10,6 +10,8 @@
 
 <!-- Init app in app.js -->
 
+<div ng-attr-class= "{{ hideorshow }}">
+
 <p>To connect our app.js file to the HTML code, we’ll <b>link</b> it over in our index.html. Usually, we put this type of import towards the end of the body.</p>
 
 <!-- Import app.js -->
@@ -98,6 +100,8 @@ var app = angular.module('ModuleName', []);
 &lt;!-- How to Create a Controller --&gt;
 app.controller('ControllerName', ['$scope', function($scope) { 
   	$scope.text = "Value for Text Attribute in Scope"
+  	$scope.method = function() { 
+  	/* body of function */ }
 }]);
 
 &lt;!-- What You Need To Import --&gt;
@@ -117,8 +121,8 @@ app.controller('ControllerName', ['$scope', function($scope) {
 			<pre><code>&lt;!-- ng-repeat -->
 // loop through a collection / array
 &lt;div ng-repeat= "color in colors">
-	&lt;li> {{ color }} &lt;/li>
-&lt;
+	&lt;li> ""color"" &lt;/li> // except with handlebars instead of quotes
+&lt;/div>
 
 &lt;!-- ng-click -->
 // execute a method or expression when element is clicked
@@ -126,11 +130,11 @@ app.controller('ControllerName', ['$scope', function($scope) {
 
 &lt;!-- ng-src -->
 // use angular to set a source path for an image
-&lt;img ng-src="http://www.myblog.com/article/images/{{ id }}">
+&lt;img ng-src="http://www.myblog.com/article/images/&#123;&#123; id &#125;&#125;">
 
 &lt;!-- ng-href -->
 // use angular to set the source for a link
-&lt;a ng-href="http://www.myblog.com/article/{{ id }}">click here!&lt;/a>   
+&lt;a ng-href="http://www.myblog.com/article&#123;&#123; id &#125;&#125;">click here!&lt;/a>   
 
 &lt;!-- ng-model -->
 // bind input elements to scope attributes
@@ -147,5 +151,6 @@ frameborder="0" allowfullscreen class="video"></iframe>
 <br>
 
 <p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+
 
 
