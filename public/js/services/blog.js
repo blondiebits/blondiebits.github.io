@@ -96,7 +96,7 @@ app.factory('blog',[function() {
 
 		title: "Using a JS Library: jQuery in 6 Minutes",
 
-		subtitle: "Learn how to make your websites interactive with a JavaScript library called jQuery in 6 minutes! We'll select some elements and dynamically change the webpage's CSS based on what the user does.",
+		subtitle: "Dynamically change a website with a JavaScript library (jQuery) in 6 minutes!",
 
 		author: "Kathryn Hodge",
 

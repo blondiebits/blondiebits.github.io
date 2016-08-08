@@ -95,7 +95,8 @@ $(document).ready(function(){
     $("#idName").hover(function(){
       // do this when we hover over the element with id idName
     },
-  function(){ // &lt;-- callback function
+  function(){ 
+  		// body of a callback function
   		// do this when we stop hovering over the element with id idName
     });
 });
@@ -122,10 +123,13 @@ $("input").focus(function(){
     // do this when user clicks the input field
 });
 $("input").blur(function(){
-    // do this when input field is not clicked
+  // do this when input field is not clicked
 });
 
-</code></pre>
+&lt;!-- Reveal a Div After Pressing the Down-Arrow -->
+ $(document).keydown(function(){
+        $("#div1").show();
+ });</code></pre>
 </div>
 </div>
 
