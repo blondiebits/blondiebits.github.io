@@ -41,6 +41,8 @@
 
 <!-- Refresh the page -->
 
+<a href="images/article5/image6.png" class="image featured"><img src="images/article5/image6.png" alt="" /></a>
+
 <p>With jQuery and CSS, we could make it so that when we hover over it, the text of the header becomes black. To do this, we’ll go into our <b>script.js</b> file and write some code.</p>
 
 <!-- $(document).ready(function(){
@@ -51,9 +53,15 @@
     });
 }); -->
 
+
+<a href="images/article5/image7.png" class="image featured"><img src="images/article5/image7.png" alt="" /></a>
+
 <p>Here, the <b>ready function</b> makes sure that the <a href="https://www.w3.org/DOM/">DOM</a> (for now, our HTML elements) have loaded. Once they are loaded, we <b>select</b> our element with the hidden id and call the <b>hover function</b> on it. This means when we over hover the element, the function on lines 2 - 4 will be run. The function will select <b>"this"</b> element (the element with the id hidden) and in the element's CSS, the <b>color property</b> will be set to the <b>value black</b>. You could do this for any element, ID, or class and set any property to any value. Next, we have the <b>callback function</b> on lines 5-6 and this is something you have to write out even if you don’t use it. We will leave it empty for now and come back to it later.</p>
 
 <!-- Refresh the page (3 pages - one empty, one hovering over, one showing it but not hovering -->
+
+
+<a href="images/article5/image8.png" class="image featured"><img src="images/article5/image8.png" alt="" /></a>
 
 <p>Now, when we refresh the page and hover over the header, the text turns black. However, when we stop hovering over the header, the text remains black. What if we want to <b>"re-hide"</b> our message after hovering over it? Going back to the code we can implement our callback function. This will be called once we <b>"leave"</b> or stop hovering over our header, the element with the ID hidden. Let's add some more code.</p>
 
@@ -66,10 +74,15 @@
     });
 });-->
 
+<a href="images/article5/image9.png" class="image featured"><img src="images/article5/image9.png" alt="" /></a>
+
+
 <p>Here, we select "this" element again, which is the element with the ID hidden, and hide it from the viewer. This function as with the .css, .hover, and .ready function are built into the jQuery library so <b>we don’t need to worry about how they are implemented</b>. We just need to know the end result. Here, the <b>hide function</b> hides "this" element on the webpages. Essentially, this just sets the <b>display property</b> of "this" element to none, but using .hide() makes the code a bit more concise. Let's see what happens when we refresh the page.</p>
 
 
 <!-- Refresh the page (3 pages, one empty, one hovering over, one attempting to find it again but can't) -->
+
+<a href="images/article5/image10.png" class="image featured"><img src="images/article5/image10.png" alt="" /></a>
 
 <p>We hover over the header and leave it. After, the header element is gone - even when we try highlighting it, it cannot be found. With this program, we hid a message in plain sight, displayed the message while the mouse was pointed on it, and then made it disappear when the mouse left it.</p>
 
@@ -77,15 +90,21 @@
 
 <!-- <button>Alert me!</button> -->
 
+<a href="images/article5/image11.png" class="image featured"><img src="images/article5/image11.png" alt="" /></a>
+
 <p>Now, we'll write the JavaScript using the jQuery library to make the button <b>interactive</b>.</p>
 
 <!-- $(“button”).click(function() {
 	alert(“I’m alerting you!”)
 }); -->
 
+<a href="images/article5/image12.png" class="image featured"><img src="images/article5/image12.png" alt="" /></a>
+
 <p> Here, we <b>select</b> all the buttons on the page and when one is <b>clicked</b>, we run the function. The function uses the <b>alert method</b> (built into HTML) to alert the user on screen with the message "I’m alerting you!". Going back to our webpage, we’ll refresh and see what our alert looks like.</p>
 
 <!-- Refresh the webpage show before and after button alert-->
+
+<a href="images/article5/image13.png" class="image featured"><img src="images/article5/image13.png" alt="" /></a>
 
 <p>And there’s our alert! Could we have done this with <b>plain vanilla JavaScript</b>? Yes, but using the <b>jQuery library</b> makes a lot of this much <b>easier</b> to code and easier to read later on. Next week, we’ll talk about <b>angular.js</b>, which is a structural JavaScript <b>framework</b> that helps you build dynamic web apps. For the first time in the series, we won’t be hard-coding our content - but we will be getting it from somewhere else. I hope you learned something in this week's post and I’ll see you next Friday.</p>
 
