@@ -112,7 +112,7 @@ app.factory('blog',[function() {
 
 	var post6 = {
 
-		title: "Learn the Basics of Angular.js in 5 minutes",
+		title: "Learn the Basics of Angular.js in 8 minutes",
 
 		subtitle: "Create your first angular.js application in this tutorial. Learn about controllers, scope, and more!",
 
@@ -130,7 +130,7 @@ app.factory('blog',[function() {
 
 
 	return {
-		posts : [post4, post3, post2, post1, post0]
+		posts : [post5, post4, post3, post2, post1, post0]
 	}
 
 }])
