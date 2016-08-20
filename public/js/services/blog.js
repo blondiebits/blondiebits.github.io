@@ -129,8 +129,27 @@ app.factory('blog',[function() {
 	}
 
 
+	var post7 = {
+
+		title: "Figure Out Angular Directives in 9 minutes!",
+
+		subtitle: "Learn how to add an angular directive to simplify your code",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, August 26",
+
+	}
+
+
 	return {
-		posts : [post5, post4, post3, post2, post1, post0]
+		posts : [post6, post5, post4, post3, post2, post1, post0]
 	}
 
 }])
