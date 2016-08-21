@@ -1,8 +1,11 @@
 <p>Angular helps us build <b>dynamic web applications</b>, but we haven’t seen all that it can do just yet. Today, we’ll be using a <b>directive</b> to help <b>simplify</b> our code and make it more <b>modular</b>. We will be building off of our To-Do list application from last time so feel free to download the code <a href="https://github.com/blondiebits/code-in-5/tree/master/Basic%20Angular%20in%208">here</a> if you don’t have it.</p>
 
 <!-- picture of our todo list app right now -->
+<a href="images/article7/image0.png" class="image featured"><img src="images/article7/image0.png" alt="" /></a>
 
 <p>Right now, we have a to-do list, but what if we wanted to add a to-buy list? Or even better a <b>"Books I Need to Buy"</b> list since school is coming up. We can do this by adding some more code to our <b>index.html</b>.</p>
+
+<a href="images/article7/image1.jpg" class="image featured"><img src="images/article7/image1.jpg" alt="" /></a>
 
 <!-- <h3>Things I Need To Do:</h3>
                    	<h3>Books I Need to Buy:</h3> picture -->
@@ -20,10 +23,13 @@
                    	itemList.push(item);
        	};
 -->
+<a href="images/article7/image2.jpg" class="image featured"><img src="images/article7/image2.jpg" alt="" /></a>
+
 <div ng-attr-class= "{{ hideorshow }}">
 <p>Here, we created two new scope attributes called <b>'todo'</b> and <b>'books'</b>. Each of these has its own list property that has an array inside of it.  We also changed the <b>addItem function</b> so that it has two <b>parameters</b> and those parameters are accessed inside of the function. Why change addItem? Well we are going to need to add items to both our to-do list and our books list. Why not use the same function for both? By adding parameters, we can specify what item gets added to what list. This will make more sense in a minute. Going back to our HTML, we <b>call</b> our addItem function - however, we don’t call it will any parameters. All we need to do is add our <b>to-do list</b> and our <b>addToDo variable</b> as <b>arguments</b> of the function.</p>
 
 <!-- <button ng-click="addItem(todo.list, addToDo)">Add This To-Do</button> -->
+<a href="images/article7/image3.jpg" class="image featured"><img src="images/article7/image3.jpg" alt="" /></a>
 
 <p>This may look a little strange, but remember, our actual list is stored inside the <b>'todo' attribute</b> of the scope. When we click the button, we’ll go to the controller and run the body of the addItem method. <b>The parameter itemList</b> will get the value of our <b>first argument (todo.list)</b>, item will get the value of <b>second argument (addToDo)</b>, and addToDo will be added to todo.list. Now, in our HTML, we can write some code for the list of books we need to buy.</p>
 
@@ -35,6 +41,9 @@
                    	<button ng-click="addItem(books.list, addBook)">Add This</button>
 -->
 
+<a href="images/article7/image4.jpg" class="image featured"><img src="images/article7/image4.jpg" alt="" /></a>
+
+
 <p>As we said before, the code for the book list and the todo list will look similar, even though the content is different. Looking at our code now, it is a bit <b>repetitive</b>. Can we make this more concise? Yes! With directives. <b>Directives</b> help us make our code modular and concise and allow us to <b>bind certain behaviors to HTML elements</b>. We’ll create a <b>new folder</b> called directives inside of our js folder and put two new files inside of it – <b>singlelist.html</b> and <b>singlelist.js</b>. Starting with the <b>singlelist.html</b>, we’ll write some HTML code that will be the <b>template</b> for our directive. We will want this code to work for our to-do list and our books list – meaning that each will run this directive to show the contents of their list. This means we are going to need some parameters as they won’t have the same data.</p>
 
 
@@ -42,6 +51,8 @@
 <div ng-repeat="item in mylist.list">
 	<li> {{ item }} </li>
 </div> -->
+
+<a href="images/article7/image5.jpg" class="image featured"><img src="images/article7/image5.jpg" alt="" /></a>
 
 
 <p>The code looks pretty similar to what we did in the index.html. We show some kind of title and then iterate through a list. The difference is that first, <b>we only have to write this code once</b>, and second, <b>it's in a different file</b> - meaning that not everything is in our index.html. This makes our code more modular. Above, <b>mylist</b> is a parameter and its value will change based on what argument we call the directive with. Going to our <b>singlelist.js</b> file, we set up the JavaScript portion of our directive.</p>
@@ -57,16 +68,20 @@
 })
 -->
 
+<a href="images/article7/image6.jpg" class="image featured"><img src="images/article7/image6.jpg" alt="" /></a>
+
 <p>Here, we name our directive <b>singlelist</b> and set up how it will work. We set the value of an <b>'mylist'</b> in our scope and set the <b>templateUrl</b> to be the singlelist.html's file path. Basically, when the directive is called in our view, the argument will be bound to the parameter (mylist), which will be added as an attribute to the scope. Then, with the parameter’s value set in scope, the directive will take the code in our templateUrl and insert it into wherever the directive was called. All we need to do now is <b>import this directive</b> and call it in our HTML code. To import the directive, we'll write...</p>
 
 <!--        	<! Directives
        	<script src="js/directives/singlelist.js"></script>
  -->
+<a href="images/article7/image7.jpg" class="image featured"><img src="images/article7/image7.jpg" alt="" /></a>
 
  <p>Next, we call it in our <b>index.html</b> so that it will actually impact our webpage. Right now, the code for our directive is written, but it isn’t being used in our living breathing webpage - our view - our index.html. To do this, we’ll delete some of our previous code and write...</p>
 
  <!--        	<singlelist mylist="todo"></singlelist>
 <singlelist mylist="books"></singlelist> -->
+<a href="images/article7/image8.jpg" class="image featured"><img src="images/article7/image8.jpg" alt="" /></a>
 
 <p>Notice, we use the <b>same directive</b> for both lists. Here, <b>'mylist'</b> is a parameter that will hold the relevant data ('todo' or 'books') for a given list. In the first call, <b>'todo' is the directive's argument</b> and in the second call, <b>'books' is the argument</b>. Right now, the ‘todo’ and ‘books’ objects in scope only have a list inside of them, but we could add more data, such as a title, to beef up these objects.</p>
 
@@ -80,28 +95,39 @@
                    	}
 -->
 
+<a href="images/article7/image9.jpg" class="image featured"><img src="images/article7/image9.jpg" alt="" /></a>
+
 <p>Now, when we <b>retrieve the title</b> from 'mylist' in the directive's template (singleList.html), we will get the actual title. So if we open the webpage...</p>
 
-<!-- Open webpage -->
+<!-- Open webpage: IMAGE 10-->
+
+<a href="images/article7/image10.png" class="image featured"><img src="images/article7/image10.png" alt="" /></a>
 
 <p>We have some <b>security issues</b>. We can fix this by using a module called <b>http-server</b>. To do this, we’ll open the terminal, navigate to our folder with the <b>cd command</b>, and use npm to get our module. If you don’t have <b>npm</b>, you can download it <a href="https://coolestguidesontheplanet.com/installing-node-js-on-osx-10-10-yosemite/">here.</a></p>
 
 <!--npm install http-server -g -->
 
+<a href="images/article7/image11.jpeg" class="image featured"><img src="images/article7/image11.jpeg" alt="" /></a>
+
+
 <p>Now that we have the module, we can go ahead and write <b>http-server</b> in our command line and access our webpage. Make sure you are in the folder with the index.html when you run this command.</p>
 
-<!--        http-server -->
+<!-- http-server: IMAGE 12 -->
+<a href="images/article7/image12.jpg" class="image featured"><img src="images/article7/image12.jpg" alt="" /></a>
 
 <p>Opening the webpage, now we have our items and our code looks awesome and efficient!</p>
 
 
-<!-- Open webpage -->
+<!-- Open webpage: IMAGE 13-->
+<a href="images/article7/image13.png" class="image featured"><img src="images/article7/image13.png" alt="" /></a>
 
 <p>Let's think about how we did this. First, we had our index.html, which is like the <b>headquarters</b> of our code. We wrote some code and then <b>added angular</b> by <b>linking</b> it in the index.html, <b>initializing a module</b> in the app.js file, and then <b>creating a controller</b> that would handle our data. We set the <b>ng-app</b> and <b>ng-controller</b> attributes in the index.html and then <b>set data in the scope</b> from the controller file that would eventually be accessed in the view - our index.html. When we saw our code was repetitive, we added a <b>directive</b> that would allow us to <b>use the same block of HTML code in different places</b>. We <b>called</b> the directive from the index.html, the parameter got the value of the argument in <b>singlelist.js</b>, and the code from the <b>template</b> (singlelist.html) was run and <b>inserted</b> into the index.html document.</p>
 
 <p>So far, our code is short and sweet and does everything we want it to do.We have our two lists, one for to-do's and another for books. However, professors often only post the ISBN number for required books, which means nothing if the user can’t convert the number to a title. <b>What if when we added an ISBN number to our books list, it changed into a little blurb with the title and author?</b> That’s what we’ll do next Friday with the <b>Google Books API</b>. See ya then!</p>
 
 <!-- Extra Content -->
+
+<a href="images/article7/directives_pinnable.png" class="image featured"><img src="images/article7/directives_pinnable.png" alt="" /></a>
 
 <div class="row main-row remember-row">
 <div class="6u 12u(mobile)">
