@@ -131,7 +131,7 @@ app.factory('blog',[function() {
 
 	var post7 = {
 
-		title: "Figure Out Angular Directives in 9 minutes!",
+		title: "Figure Out How to Use Angular Directives",
 
 		subtitle: "Learn how to add an angular directive to simplify your code",
 
@@ -147,9 +147,26 @@ app.factory('blog',[function() {
 
 	}
 
+	var post8 = {
+
+		title: "Access an Endpoint with Angular!",
+
+		subtitle: "Learn how to get data from the Internet via endpoints with Angular",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, September 2",
+	}
+
 
 	return {
-		posts : [post7, post6, post5, post4, post3, post2, post1, post0]
+		posts : [post8, post7, post6, post5, post4, post3, post2, post1, post0]
 	}
 
 }])

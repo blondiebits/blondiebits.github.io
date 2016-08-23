@@ -1,0 +1,158 @@
+<p>Here, we have our <b>list application</b> from <a href="http://blondiebits.herokuapp.com/#/7">last time</a>. We have our to-do list and our books list and when we add an item, it gets added to the list.</p>
+
+<!-- Add item to the list -->
+
+<p>But what if we had an <b>ISBN number</b> of a book and needed to add that to our books to buy list? We wouldn’t want just the number to show up. We’d want the title and author of the book to show up instead and we can do this by using the <b>Google Books API</b>.</p>
+
+<!-- picture of index.html -->
+
+<p>In our index.html, we call a method called <b>addItem</b> that adds the book to the list. We can change this method so that when it takes the user input, we use the <b>Google Books API</b> to change it and add the result to our list versus just adding the number to the list. To do this, we’ll need to go to our <b>MainController</b>.</p>
+
+<div ng-attr-class= "{{ hideorshow }}">
+
+<!-- main controller pic app.controller('MainController', ['$scope', function($scope) { 
+  	$scope.todo = {
+  		title: "Things I Need to Do",
+  		list: ["Clean my room", "Go to the store", "Study Cracking the Coding Interview"]
+  	}
+
+  	$scope.books = {
+  		title: "Books I Need to Buy",
+  		list: []
+  	}
+  	$scope.addItem = function(itemList, item) {
+  		itemList.push(item);
+  	}
+}]); -->
+
+<p>We’ll need to change the <b>addItem method</b> so that it checks if the input is an ISBN number and if it is, add the appropriate title and author to the list. What defines an <b>ISBN number</b>? Well, for this case, we’ll say it’s an item that is <b>10 or 13 characters long</b> and <b>consists of all numbers</b>. If it’s an ISBN number, we’ll print that it is an ISBN number and if it’s not then we’ll print that it is not.</p>
+
+<!-- $scope.addItem = function(itemList, item) {
+      if ((item.length == 10 || item.length == 13) && hasAllNumbers(item)) {
+            console.log("Is an ISBN number");
+      } else {
+        console.log("Not an ISBN number");
+     } } -->
+
+<p>Now, with this in place, we should define the <b>hasAllNumbers function</b>. This may look a little strange at first, but it will make sense in a minute.</p>
+
+<!--  function hasAllNumbers(item) {
+    return /^[0-9]*$/.test(item);
+  }-->
+
+  <p>Here, we have something called a <b>regular expression</b>. Basically, it will return true or false, based on whether the input <b>matches</b> this expression.
+  <ul>
+
+  	<li><b>/</b> means the start of an expression that we are about to define. </li>
+
+  	<li><b>^</b> means that we will start our "matching" at the beginning of the input versus in the middle or at the end.</li> 
+
+<li><b>[0-9]</b> means the input should match any digit 0 - 9 and combined with the caret in front means the first character should be a digit. </li>
+
+<li><b>*</b> means we can have any number of the previous expression, which means in this case, we can have as many digits as we want.</li>
+
+<li><b>$</b> means this should be the end of the input</li>
+
+<li><b>/</b> closes the regular expression.</li>
+
+  </ul></p>
+
+  <p>If this is all true for the input and the input <b>matches the rules</b> in the regular expression, then <b>/^[0-9]*$/.test(item);</b> will return true, otherwise it will return false. In other words, our expression above tests if the input <b>consists of all digits</b> - it will return true if it does and false if it doesn’t. It may consist of no characters or 15 characters, but our other test in the if statement checks if it is the appropriate length so we don’t need to worry about that here. </p>
+
+  <p>So let's save this, stop our http-server, and close our browser. The reason we must do this is because of <b>caching issues</b> - the browser still thinks we are running an older version of the code. We'll restart our http-server, open a browser in incognito mode, and go to our local host URL. Next, we'll add an ISBN number and if we open the <b>console</b>, we should see <b>"Is an ISBN number"</b> printed out.</p>
+
+<!-- Open page and add an ISBN number -->
+
+	<p>If we add something that is not an ISBN number, then <b>"Not an ISBN number"</b> will be printed out. </p>
+
+<!-- Open page and add something that is not an ISBN number -->
+
+	<p>So our test for ISBN numbers works! Now, we just need to use the <b>Google Books API</b> to convert the input and then add that converted input to the list. Going back to our controller, we’ll add a <b>service</b> called <b>$http</b>. We’ll talk more about services in the next video, but this allows us to hit the <b>endpoint</b> for the Google Books API and get data from the internet.</p>
+
+<!-- Add service -->
+
+	<p>After doing some research I found that if we go to the URL <b>https://www.googleapis.com/books/v1/volumes?q=isbn:</b> where the ISBN number is after the colon, we get a JSON object that gives us a bunch of data about a given book. A <b>JSON</b> is just a way of ordering data in JavaScript and we won’t worry about it too much for now. So if we just use a random ISBN number here and open the page, we’ll see some data.</p>
+
+<!-- Show page -->
+
+	<p>Going back to our <b>MainController</b>, we can get this data into our code by going...</p>
+<!-- 	
+  $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + item).success(function(data){
+        }) -->
+
+    <p>Here, we use the <b>$http service</b> and make a <b>GET request</b> to get data from the https://www.googleapis.com/books/v1/volumes?q=isbn: + item webpage. The data we get <b>depends on what ISBN number (item) the user inputs</b>. If the GET request is <b>successful</b>, then we will run the function with data as a <b>parameter</b>. The value of this parameter will be the data from the webpage. </p>
+
+<!-- JSON Object on the page -->
+
+	<p>Going back to the JSON object displayed <a href="https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699">here</a>, we can see that the <b>title</b> is nested within <b>volumeInfo</b>, which is nested within the <b>first element</b> of the data's <b>items</b>. We can also see that the <b>author</b> or authors are <b>nested</b> within volumeInfo as well. To access these specific things, we can add some more code to our <b>MainController</b>.</p>
+
+<!-- itemList.push("Title: " + data.items[0].volumeInfo.title + " // Author: " + data.items[0].volumeInfo.authors) -->
+
+	<p>We’ll want to push a new item to our <b>itemList</b>, but what is this item? It should be a <b>String</b> consisting of the <b>title</b> and <b>author</b> from the data we just got from the internet. We have the data so to access the title we’ll write <b>data.items[0].volumeInfo.title</b> and to access the author we’ll write <b>data.items[0].volumeInfo.authors</b>. Now, we’ll just move the <b>itemList.push(item);</b> to the <b>else clause</b> and we will be good to go!</p>
+
+	<!-- else {
+        console.log("Not an ISBN number");
+		    itemList.push(item);
+      } -->
+
+     <p>Now, if we go ahead and <b>close</b> all of our windows, stop <b>http-server</b>, start it again, and open an <b>incognito window</b>, we’ll be able to test our new code.</p>
+
+     <!-- Open 2 pages - one before and one after addition. -->
+
+     <p>And it works! I hope you learned something in this tutorial and next Friday, we’ll go more into <b>Angular services</b>. See ya then.</p>
+
+<a href="images/article6/angular_pinnable.png" class="image featured"><img src="images/article6/angular_pinnable.png" alt="" /></a>
+
+<!-- Extra Content -->
+
+<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- Example Endpoint for Google Books API -->
+https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699
+
+&lt;!-- How to Add $http --&gt;
+app.controller('ControllerName', ['$scope', '$http', 
+	function($scope, $http) { /* implementation */ }])
+
+&lt;!-- How to Make a GET Request --&gt;
+ $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699').
+ 	success(function(data){
+ 		// access data and do something with it
+    })</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+			<h4>Plus a Little Extra:</h4>
+
+			<pre><code>&lt;!-- More Documentation on the Google Books API -->
+https://developers.google.com/books/docs/v1/using
+
+&lt;!-- Example of JSON Object -->
+{ 
+	"day" : "August 5",
+	"words_of_the_day" : [
+				"firecracker", 
+				"computer science",
+				"software development"
+			]
+}</code></pre>
+</div>
+</div>
+
+<h4 style="text-align: center">YouTube Video</h4>
+
+<div class="container">
+<iframe src="https://www.youtube.com/embed/l23KYiM5Se0" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<br>
+
+<p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+
+
+
+
+
+
