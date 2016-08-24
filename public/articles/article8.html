@@ -1,10 +1,12 @@
-<p>Here, we have our <b>list application</b> from <a href="http://blondiebits.herokuapp.com/#/7">last time</a>. We have our to-do list and our books list and when we add an item, it gets added to the list.</p>
+<p>Here, we have our <a href="https://github.com/blondiebits/code-in-5/tree/master/Directives%20in%209"><b>list application</b></a> from <a href="http://blondiebits.herokuapp.com/#/7">last time</a>. We have our to-do list and our books list and when we add an item, it gets added to the list.</p>
 
 <!-- Add item to the list -->
+<a href="images/article8/image0.png" class="image featured"><img src="images/article8/image0.png" alt="" /></a>
 
 <p>But what if we had an <b>ISBN number</b> of a book and needed to add that to our books to buy list? We wouldn’t want just the number to show up. We’d want the title and author of the book to show up instead and we can do this by using the <b>Google Books API</b>.</p>
 
 <!-- picture of index.html -->
+<a href="images/article8/image1.jpg" class="image featured"><img src="images/article8/image1.jpg" alt="" /></a>
 
 <p>In our index.html, we call a method called <b>addItem</b> that adds the book to the list. We can change this method so that when it takes the user input, we use the <b>Google Books API</b> to change it and add the result to our list versus just adding the number to the list. To do this, we’ll need to go to our <b>MainController</b>.</p>
 
@@ -25,6 +27,8 @@
   	}
 }]); -->
 
+<a href="images/article8/image2.jpg" class="image featured"><img src="images/article8/image2.jpg" alt="" /></a>
+
 <p>We’ll need to change the <b>addItem method</b> so that it checks if the input is an ISBN number and if it is, add the appropriate title and author to the list. What defines an <b>ISBN number</b>? Well, for this case, we’ll say it’s an item that is <b>10 or 13 characters long</b> and <b>consists of all numbers</b>. If it’s an ISBN number, we’ll print that it is an ISBN number and if it’s not then we’ll print that it is not.</p>
 
 <!-- $scope.addItem = function(itemList, item) {
@@ -34,11 +38,14 @@
         console.log("Not an ISBN number");
      } } -->
 
+     <a href="images/article8/image3.jpg" class="image featured"><img src="images/article8/image3.jpg" alt="" /></a>
+
 <p>Now, with this in place, we should define the <b>hasAllNumbers function</b>. This may look a little strange at first, but it will make sense in a minute.</p>
 
 <!--  function hasAllNumbers(item) {
     return /^[0-9]*$/.test(item);
   }-->
+  <a href="images/article8/image4.jpg" class="image featured"><img src="images/article8/image4.jpg" alt="" /></a>
 
   <p>Here, we have something called a <b>regular expression</b>. Basically, it will return true or false, based on whether the input <b>matches</b> this expression.
   <ul>
@@ -62,30 +69,40 @@
   <p>So let's save this, stop our http-server, and close our browser. The reason we must do this is because of <b>caching issues</b> - the browser still thinks we are running an older version of the code. We'll restart our http-server, open a browser in incognito mode, and go to our local host URL. Next, we'll add an ISBN number and if we open the <b>console</b>, we should see <b>"Is an ISBN number"</b> printed out.</p>
 
 <!-- Open page and add an ISBN number -->
+<a href="images/article8/image5.jpg" class="image featured"><img src="images/article8/image5.jpg" alt="" /></a>
 
 	<p>If we add something that is not an ISBN number, then <b>"Not an ISBN number"</b> will be printed out. </p>
 
 <!-- Open page and add something that is not an ISBN number -->
 
+<a href="images/article8/image6.jpg" class="image featured"><img src="images/article8/image6.jpg" alt="" /></a>
+
 	<p>So our test for ISBN numbers works! Now, we just need to use the <b>Google Books API</b> to convert the input and then add that converted input to the list. Going back to our controller, we’ll add a <b>service</b> called <b>$http</b>. We’ll talk more about services in the next video, but this allows us to hit the <b>endpoint</b> for the Google Books API and get data from the internet.</p>
 
 <!-- Add service -->
 
+<a href="images/article8/image7.jpg" class="image featured"><img src="images/article8/image7.jpg" alt="" /></a>
+
 	<p>After doing some research I found that if we go to the URL <b>https://www.googleapis.com/books/v1/volumes?q=isbn:</b> where the ISBN number is after the colon, we get a JSON object that gives us a bunch of data about a given book. A <b>JSON</b> is just a way of ordering data in JavaScript and we won’t worry about it too much for now. So if we just use a random ISBN number here and open the page, we’ll see some data.</p>
 
 <!-- Show page -->
+<a href="images/article8/image8.jpg" class="image featured"><img src="images/article8/image8.jpg" alt="" /></a>
 
 	<p>Going back to our <b>MainController</b>, we can get this data into our code by going...</p>
 <!-- 	
   $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + item).success(function(data){
         }) -->
 
+        <a href="images/article8/image9.jpg" class="image featured"><img src="images/article8/image9.jpg" alt="" /></a>
+
     <p>Here, we use the <b>$http service</b> and make a <b>GET request</b> to get data from the https://www.googleapis.com/books/v1/volumes?q=isbn: + item webpage. The data we get <b>depends on what ISBN number (item) the user inputs</b>. If the GET request is <b>successful</b>, then we will run the function with data as a <b>parameter</b>. The value of this parameter will be the data from the webpage. </p>
 
-<!-- JSON Object on the page -->
+<!-- JSON Object on the page: USE Image 8 again -->
+<a href="images/article8/image8.jpg" class="image featured"><img src="images/article8/image8.jpg" alt="" /></a>
 
 	<p>Going back to the JSON object displayed <a href="https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699">here</a>, we can see that the <b>title</b> is nested within <b>volumeInfo</b>, which is nested within the <b>first element</b> of the data's <b>items</b>. We can also see that the <b>author</b> or authors are <b>nested</b> within volumeInfo as well. To access these specific things, we can add some more code to our <b>MainController</b>.</p>
 
+<a href="images/article8/image10.jpg" class="image featured"><img src="images/article8/image10.jpg" alt="" /></a>
 <!-- itemList.push("Title: " + data.items[0].volumeInfo.title + " // Author: " + data.items[0].volumeInfo.authors) -->
 
 	<p>We’ll want to push a new item to our <b>itemList</b>, but what is this item? It should be a <b>String</b> consisting of the <b>title</b> and <b>author</b> from the data we just got from the internet. We have the data so to access the title we’ll write <b>data.items[0].volumeInfo.title</b> and to access the author we’ll write <b>data.items[0].volumeInfo.authors</b>. Now, we’ll just move the <b>itemList.push(item);</b> to the <b>else clause</b> and we will be good to go!</p>
@@ -95,13 +112,17 @@
 		    itemList.push(item);
       } -->
 
+      <a href="images/article8/image11.jpg" class="image featured"><img src="images/article8/image11.jpg" alt="" /></a>
+
      <p>Now, if we go ahead and <b>close</b> all of our windows, stop <b>http-server</b>, start it again, and open an <b>incognito window</b>, we’ll be able to test our new code.</p>
 
      <!-- Open 2 pages - one before and one after addition. -->
 
+     <a href="images/article8/image12.jpg" class="image featured"><img src="images/article8/image12.jpg" alt="" /></a>
+
      <p>And it works! I hope you learned something in this tutorial and next Friday, we’ll go more into <b>Angular services</b>. See ya then.</p>
 
-<a href="images/article6/angular_pinnable.png" class="image featured"><img src="images/article6/angular_pinnable.png" alt="" /></a>
+<a href="images/article8/endpoints_pinnable.png" class="image featured"><img src="images/article8/endpoints_pinnable.png" alt="" /></a>
 
 <!-- Extra Content -->
 
