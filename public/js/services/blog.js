@@ -164,9 +164,8 @@ app.factory('blog',[function() {
 		date: "Friday, September 2",
 	}
 
-
 	return {
-		posts : [post6, post5, post4, post3, post2, post1, post0]
+		posts : [post7, post6, post5, post4, post3, post2, post1, post0]
 	}
 
 }])
