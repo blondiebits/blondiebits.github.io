@@ -149,7 +149,7 @@ app.factory('blog',[function() {
 
 	var post8 = {
 
-		title: "Access an Endpoint with Angular!",
+		title: "Access an Endpoint with Angular",
 
 		subtitle: "Learn how to get data from the Internet via endpoints with Angular",
 
@@ -164,8 +164,26 @@ app.factory('blog',[function() {
 		date: "Friday, September 2",
 	}
 
+	var post9 = {
+
+		title: "Add a Service to your Angular Application",
+
+		subtitle: "Figure out how to better organize your data with an Angular service",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, September 2",
+	}
+
+
 	return {
-		posts : [post7, post6, post5, post4, post3, post2, post1, post0]
+		posts : [post9, post8, post7, post6, post5, post4, post3, post2, post1, post0]
 	}
 
 }])

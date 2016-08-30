@@ -1,0 +1,181 @@
+<p>Today, we’re going to talk about <b>Angular services</b>. A <b>service</b> is something that talks to our controller and helps us organize where we get our data. We have some code here that <b>initializes</b> an Angular application, has a <b>controller</b> that controls the data, and a <b>simple index.html view</b> to display the data. We are going to make it so that it will display the current top Technology stories from the New York Times.</p>
+
+<!-- picture of all three files code -->
+
+<p>To get our data from the Times, let's take a look at the <a href="http://developer.nytimes.com/"><b>New York Times Developer website</b></a>.</p>
+
+<!-- picture of developer website -->
+
+<p>There’s a lot of data we can access from the New York Times, but first we’ll need an <b>API Key</b>. An <b>API</b> is an <b>Application Programming Interface</b> and it’s how we’ll get our data from the New York Times. We can access the API with an API key. This key that will be <b>specifically assigned to us</b> so if we try to hack anything or abuse the API or doing any suspicious, the New York Times will know that it is us and block our access. So let’s go ahead and get an API Key.</p>
+
+<!--- picture of where we get the key -->
+
+
+<div ng-attr-class= "{{ hideorshow }}">
+
+<p>We'll fill out the form with <b>Top Stories V2 selected</b> in the dropdown and once we hit submit, the API key, which will consist of letters and numbers, will be emailed to us. For this tutorial, I’m going to <b>block out</b> my API key because it’s supposed to be a secret – kind of like a password. If I showed it here, you could do some hacky stuff and it would all be pinned on me.</p>
+
+<!-- Scroll down to Top Stories API thing -->
+
+<p>Once we get our key, we can have some fun. We’ll go ahead and go back to the main developer page and scrolling down, click on Top Stories V2.</p>
+
+<!-- try it out button -->
+
+<p>We'll click the <b>Try It Out</b> button and mess with their demo set up here.</p>
+
+<!-- picture of unauthorized -->
+
+<p>Right now, we are <b>unauthorized</b>, but once we insert our API key on the left, we'll be able to use the API.</p>
+
+<!-- picture of authorized -->
+
+<p>So inserting our key, we can see what this API does. For the <b>Parameters</b>, we have <b>section</b> and <b>format</b>, where section has the value <b>home</b> and the format is a <b>JSON object</b>. A JSON is just a way we can organize our data in JavaScript so don't worry too much it for now, just know our data from the New York Times is formatted as a JSON. In this JSON on the right here, we can see what <b>data</b> this API returns. We get a status code, a copyright, and the number of results returned along with a bunch of other stuff. We only really care about the <b>results</b> aka our Top Stories from the Home section.</p>
+
+<p>When we access this data in our Angular application, we will want to iterate through this <b>results array</b> (where each result is an article) showing the <b>title</b>, <b>abstract</b>, and a <b>link</b> to the article. Notice that the API does not give us the full article text since you have to pay to read the New York Times. In other words, the New York Times is allowing us access to some data (article titles, images, etc), but not all of the data it has. To get data on the <b>Top Technology Stories</b>, all we'll have to do is change the <b>value</b> of the <b>section parameter</b> to <b>Technology</b> instead of Home </p>
+
+<!-- picture of authorized with Technology selected -->
+
+<p>Now how do we get this JSON into our code? We’ll use <b>$http</b>, which is another service that allows us to get information from the Internet. We could get the data in the controller like we did in the <a href="http://blondiebits.herokuapp.com/#/8">previous tutorial</a>a>, but to make our application more organized, we’ll use a service. To do this, we’ll create a new folder called <b>services</b> and put a <b>file</b> called <b>nyt.js</b> inside of it. In the file, we’ll write some code that <b>initializes a new service</b> that uses <b>$http</b>.</p>
+
+<!-- show file path of services with code app.factory('nyt', ['$http', function($http) {
+ 
+}])-->
+
+<p>To get the New York Times data, we'll need to add an <b>HTTP GET Request</b>. We can somewhat guess what the <b>endpoint</b> will be by looking at the sample code in the developer demo.</p>
+
+<!-- show Sample Code with URL Highlighted -->
+
+<p>In the JavaScript sample code, the New York Times uses AJAX instead of Angular, but we can make it work for our purposes. We'll make a <b>GET Request</b> with the URL shown in the demo and then add in our <b>API key as an argument</b> to the <b>api-key parameter</b>.</p>
+
+<!-- show code with app.factory('nyt', ['$http', function($http) {
+        	return $http.get("https://api.nytimes.com/svc/topstories/v2/technology.json", {params: {'api-key': "keyHere"}})
+ 
+        	.success(function(data) {
+                    	return data;
+        	})
+ 
+        	.error(function(err) {
+                    	alert(err)
+                    	return err;
+        	})
+ 
+}])
+ -->
+
+ <p>Now our service is set up - it gets data from the New York Times and returns it! With this the service ready-to-go, let's access it and use it in our <b>controller</b>.</p>
+
+<!-- app.controller('MainController', ['$scope', 'nyt', function($scope, nyt) {
+        	$scope.list = [];
+ 
+        	nyt.success(function(data) {
+                    	console.log(data);
+        	})
+ 
+}]); -->
+
+<p>Here, we insert the service as a <b>dependency</b>, meaning the application won’t work if we don’t have the code for the service. In the controller, we run the service and if it is successful, the function with the data will be run. To see if any of this works so far, we <b>print out the data</b> inside the function. Now, let's open a web browser with the <b>view (our index.html)</b> and see what happens.</p>
+
+<!-- picture of window with all the code -->
+
+<p>And we get the <b>JSON</b> we saw in the demo - except a lot less formatted. Let's go back to the code and change it so we take what we want from this data, put it in scope, and then access it in view.</p>
+
+<!--                     	for (i = 0; i < data.results.length; i++) {
+                                	var story = {
+                                            	title: data.results[i].title,
+                                            	abstract: data.results[i].abstract,
+                                            	url: data.results[i].url
+                                	}
+                                	$scope.list.push(story)
+                    	}
+
+                    	-->
+
+<p>If you look back at the JSON object, you'll see that it had an <b>attribute</b> called <b>results</b> that was an array. Each item in the results array has a <b>title</b>, <b>abstract</b>, and <b>url</b>. Here, we create an <b>object</b> called <b>story</b> and put these properties into it. Finally, we add the story to the <b>list</b> attribute in the scope, which will contain all of our stories (aka our <b>Top Technology articles</b>) in the end.
+</p>
+
+<p>Now with the data in our scope, we just need to access it in our <b>view</b>.</p>
+
+<!-- 	<h1>Most Popular Stories in Technology</h1>
+ 
+                                	<div ng-repeat="story in list">
+                                            	<h3>{{ story.title }}</h3>
+                                            	<p>{{ story.abstract }}</p>
+                                            	<a ng-href="{{ story.url }}">Read</a>
+ 
+                                            	<br>
+                                	</div> -->
+<p>Here, we access the <b>list attribute</b> from the <b>scope</b> and <b>iterate</b> through all the stories inside of it. We display each story's title and abstract and give a link to where the user can access the full text. Let's open this up in the browser and see what we get.</p>
+
+<!-- open browser with final product -->
+
+<p>There we go! Now, we have a list of the <b>most recent Top Technology stories</b>, each given with a title, abstract, and a link to their full text. That’s all for now, but next time, we’ll talk about <b>how to host</b> your webpage on a server with <b>GitHub pages</b> and make it available to everyone around the world! See you then.</p>
+
+<a href="images/article9/services_pinnable.png" class="image featured"><img src="images/article9/services_pinnable.png" alt="" /></a>
+
+<!-- Extra Content -->
+
+<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- Example Endpoint for NYT Top Stories V2 API -->
+https://api.nytimes.com/svc/topstories/v2/technology.json
+
+&lt;!-- How to Create a Service --&gt;
+app.factory('serviceName', ['$http', function($http) {
+	// go get data with HTTP request and return it
+}])
+
+&lt;!-- How to Make a GET Request with Parameters--&gt;
+return $http.get("https://api.nytimes.com/svc/topstories/v2/technology.json", 
+       {params: {'api-key': "keyHere"}})
+		.success(function(data) {
+                    	return data;
+        	})
+ 
+        	.error(function(err) {
+                    	return err;
+        	})</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+			<h4>Plus a Little Extra:</h4>
+
+			<pre><code>&lt;!-- More Documentation on the New York Times API -->
+http://developer.nytimes.com/
+
+&lt;!-- How to Access a Service inside of a Controller -->
+app.controller('MainController', ['$scope', 'serviceName', function($scope, nyt) {
+	serviceName.success(function(data) {
+    	// do stuff with returned data
+    })
+}])
+
+&lt;!-- Example of JSON Object -->
+{ 
+	"day" : "August 5",
+	"favorite_memory" : "Going to the Store"
+	"favorite_food" : "Pizza"
+	"favorite_candy" : "Skittles"
+	"favorite_activity" : "Filmmaking"
+}</code></pre>
+</div>
+</div>
+
+<h4 style="text-align: center">YouTube Video</h4>
+
+<div class="container">
+<iframe src="https://www.youtube.com/embed/l23KYiM5Se0" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<br>
+
+<p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+
+
+
+
+
+
+
+
