@@ -178,7 +178,7 @@ app.factory('blog',[function() {
 
 		author_bio: "bio/kathryn_bio.html",
 
-		date: "Friday, September 2",
+		date: "Friday, September 9",
 	}
 
 
