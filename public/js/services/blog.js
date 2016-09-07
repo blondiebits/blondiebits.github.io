@@ -181,9 +181,26 @@ app.factory('blog',[function() {
 		date: "Friday, September 9",
 	}
 
+	var post10 = {
+		
+		title: "Get your Website on the Web with GitHub Pages",
+
+		subtitle: "Put your content on the Internet with GitHub Pages in 5 minutes",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, September 16",
+	}
+
 
 	return {
-		posts : [post8, post7, post6, post5, post4, post3, post2, post1, post0]
+		posts : [post10, post9, post8, post7, post6, post5, post4, post3, post2, post1, post0]
 	}
 
 }])
