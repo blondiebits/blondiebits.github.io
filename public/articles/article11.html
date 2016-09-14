@@ -1,0 +1,211 @@
+<p>Today we are going to put a local web application on the Internet with Heroku. <b>Heroku</b> is a place we can host our code so that anyone around the world can see it. Let's take the code from the <a href="http://blondiebits.herokuapp.com/#/7">Angular Endpoints tutorial</a> and put it on the web. If you haven't done the Angular tutorial, no worries! We will barely look at that code - we are just focused on getting it on the cloud.  We'll have to use Heroku because our angular code has directives, which are <b>dynamic</b> and won't work on GitHub Pages. </p>
+
+<!-- 0 picture of where angular code is and angular code -->
+	 <a href="images/article11/image0.jpg" class="image featured"><img src="images/article11/image0.jpg" alt="" /></a>
+
+
+<p>Going into our folder, we'll create a new file called <b>package.json</b>. This will contain all the <b>metadata</b> (details) about our application. Most importantly, it will list our <b>dependencies</b> that are needed to run our website and we will install those dependencies later. For now, just fill out your package.json like this...</p>
+
+<!-- 1 package.json {	  "name": "tutorial",
+-	  "version": "1.0.0",
+-	  "description": "",
+-	  "scripts": {
+-	    "start": "node server.js"
+-	  },
+-	  "dependencies": {
+-	    "express": "4.13.3"
+-	  },
+-	  "author": "Kathryn Hodge",
+-	  "license": "ISC"
+-	}
+-->
+
+<a href="images/article11/image1.jpg" class="image featured"><img src="images/article11/image1.jpg" alt="" /></a>
+
+<p>We name our app, give it a version, and tell it to start at the <b>server.js</B> file. We will be writing the <b>back-end (or server-side)</b> of our application in the server.js file with something called <b>Node.js</b>. Node.js is a platform that allows us to write our server-side in JavaScript instead of some other back-end language. Before, when we created the HTML, CSS, and Angular.js side of our application, we were creating the <b>front-end</b> - now we are writing the back-end.</p>
+
+<p>We also have one dependency, <b>Express (Version 4.13.3)</b>, and this is a <b>Node.js framework</b> that makes it easy to get our server up and running. Next, we'll create our <b>Procfile</b>, which will tell Heroku what command to run and where to look to start our server. In this case, it should look to the <b>server.js</b> file.</p>
+
+<div ng-attr-class= "{{ hideorshow }}">
+
+<!-- 2 Procfile -	web: node server.js }} -->
+
+<a href="images/article11/image2.jpg" class="image featured"><img src="images/article11/image2.jpg" alt="" /></a>
+
+<p>Lastly, we will write out <b>server.js</b> file with <b>Node</b> and <b>Express</b>.</p>
+
+<!-- -	3 var express = require('express')
+-	var app = express();
+-	
+-	var port = process.env.PORT || 8080;
+-	
+-	app.use(express.static(__dirname));
+-	
+-	app.get('/', function(req, res) {
+-		res.render('index');
+-	})
+-	
+-	app.listen(port, function() {
+-		console.log('app running')
+-	})
+-->
+
+<a href="images/article11/image3.jpg" class="image featured"><img src="images/article11/image3.jpg" alt="" /></a>
+
+<p>First, we require Express and create an Express application. Then, we set the <b>port number</b>, which could evaluate to one of two things. With <b>process.env.PORT</b>, we allow Heroku to set the port number (usually port 5000) and if that doesn't work, then we default to port 8080.</p>
+
+<p>Next, we write <b>app.use(express.static(__dirname))</b>s so that our <b>static files</b> (images, CSS) can be served and shown on the webpage. <b>__dirname</b> evaluates to the file path of the directory (folder) so all of our static files should be in or nested within this directory. With <b>app.get()</b>, we set up some routing for our application. When it is first loaded ('/'), we run a function with the <b>request</b> and the <b>response</b> as parameters and tell the response to <b>render the index</b> (really index.html) file. This file will be able to access all of our front-end code, including our directives, since everything is <b>linked</b> inside of it.</p>
+
+<p>Finally, we start our server. In the world of the Internet, users search a URL and by doing so, they send a <b>request</b>. The server, which is always <b>listening</b> for requests, sends a <b>response</b> that contains the webpage. To start our server, we have to get it to listen so we run the <b>app.listen()</b> function with the port number we set earlier and print out that the app is running.</p>
+
+<p>Going to the command line, we'll <b>cd</b> into our current directory <a href="https://www.youtube.com/playlist?list=PLcLMSci1ZoPvbvAIn_tuSzMgF1c7VVJ6e">(learn basic command line / terminal here on my channel)</a> and install our <b>dependencies</b>. We will be using <b>npm</b>, which is a part of the Node.js platform, so if you don't have npm, you can download it <a href="https://nodejs.org/en/download/">here</a> with node. Once in your directory with the <b>package.json</b> file, write <b>npm install</b>. This will install all of our dependencies or in this case, Express.</p>
+
+<!-- 4 picture of command line with npm install run -->
+
+<a href="images/article11/image4.jpg" class="image featured"><img src="images/article11/image4.jpg" alt="" /></a>
+
+<p>With our local code set up, we'll go to the internet and create a <b>Herkou account</b>. To do this, we'll go to <a href="https://signup.heroku.com/login">https://signup.heroku.com/login</a> and enter our information.</p>
+
+<!-- 5 enter info -->
+
+<a href="images/article11/image5.jpg" class="image featured"><img src="images/article11/image5.jpg" alt="" /></a>
+
+<p>For primary development language, we'll choose <b>Node.js</b> and then, we'll click submit.</p> 
+
+<!-- 6 chose node.js -->
+<a href="images/article11/image6.jpg" class="image featured"><img src="images/article11/image6.jpg" alt="" /></a>
+
+<p>Now, we need to <b>confirm</b> our email...</p>
+
+<!-- 7 confirm email -->
+
+<a href="images/article11/image7.jpg" class="image featured"><img src="images/article11/image7.jpg" alt="" /></a>
+
+<p>And once it is confirmed, set the password and then proceed with the account.</p>
+
+<!-- 8 confirmed email, proceed -->
+
+<a href="images/article11/image8.jpg" class="image featured"><img src="images/article11/image8.jpg" alt="" /></a>
+
+<p>Our Heroku account is set up! We just need to <b>bring Heroku to our command line</b> so we can push it up to the cloud. To do this, we'll download the <b>Heroku Command Line Tools</b> at <a href="https://devcenter.heroku.com/articles/heroku-command-line">https://devcenter.heroku.com/articles/heroku-command-line.</a></p>
+
+<!-- 9 picture of cmd line tools -->
+
+<a href="images/article11/image9.jpg" class="image featured"><img src="images/article11/image9.jpg" alt="" /></a>
+
+<p>With the tools downloaded, double check to see if you have it by writing <b>heroku --version</b></p>
+
+<!-- 10 picture of heroku - -version -->
+
+<a href="images/article11/image10.jpg" class="image featured"><img src="images/article11/image10.jpg" alt="" /></a>
+
+<p>Next, from the command line, we will login with the command <b>heroku login</b>. After entering your information, you should see something similar to this...</p>
+
+<a href="images/article11/image11.jpg" class="image featured"><img src="images/article11/image11.jpg" alt="" /></a>
+
+<!-- 11 logged into heroku -->
+
+<p>We can see if this application works if write go <b>heroku local web</b> in the command line...</p>
+
+<!-- 12 heroku local web in cmd -->
+
+<a href="images/article11/image12.jpg" class="image featured"><img src="images/article11/image12.jpg" alt="" /></a>
+
+<p>... and then go to <b>http://localhost:5000</b>.</p>
+
+<!-- 13 pic of it at localhost -->
+
+<a href="images/article11/image13.jpg" class="image featured"><img src="images/article11/image13.jpg" alt="" /></a>
+
+<p>There's our application! Now, this is only running <b>locally</b> on my computer - meaning if you go to localhost:5000, you will not see what I see. We'll go ahead and stop our localhost with <b>command (or control) C</b> and get this code to the cloud where everyone can see it. To do this, we will deploy with <b>Git</b>. If you don’t have git, you can click <a href="https://git-scm.com/downloads">here</a>, download it, and come back to continue. You can check if you have git with <b>git --version</b> (similar to how we checked with heroku). Once you have git, you can intialize this directory as a GitHub repository with the command <b>git init</b>. To learn more about how git works, check out these <a href="https://www.youtube.com/playlist?list=PLcLMSci1ZoPvA0gXxT6iMz-IIY1e4wZhy">tutorials</a>.</p>
+
+<!-- 14 git init -->
+
+<a href="images/article11/image14.jpg" class="image featured"><img src="images/article11/image14.jpg" alt="" /></a>
+
+<p>Next, we'll add all our changes to the staging area with <b>git add .</b> and then commit them with <b>git commit -m "Initing"</b>.</p> 
+
+<!-- 15 git add . and git commit -m "Initing" -->
+
+<a href="images/article11/image15.jpg" class="image featured"><img src="images/article11/image15.jpg" alt="" /></a>
+
+<p>Now, we are ready to <b>push to the cloud (Heroku)</b>, which will host our code! First, we'll make this a Heroku application with the command <b>heroku create</b>.</p>
+
+<!-- 16 heroku create -->
+
+<a href="images/article11/image16.jpg" class="image featured"><img src="images/article11/image16.jpg" alt="" /></a>
+
+<p>This <b>creates</b> our application and names it <b>guarded-brook-64454</b>. If you are doing this tutorial along with me, yours will be named something else and that's okay! If we go back to our Heroku dashboard, we'll actually see our app created on the site - however, it doesn't have our code yet!</p>
+
+<!-- 17 show app on site -->
+
+<a href="images/article11/image17.jpg" class="image featured"><img src="images/article11/image17.jpg" alt="" /></a>
+
+<p>To get our code up on Heroku, we'll write <b>git push https://git.heroku.com/guarded-brook-64454.git master</b>. If you are creating your own Heroku app, instead of guarded-brook-64454, you should put your own app's name.</p>
+
+<!-- 18 show git push -->
+
+<a href="images/article11/image18.jpg" class="image featured"><img src="images/article11/image18.jpg" alt="" /></a>
+
+<p>It may take a minute for this command to run and so go get a coffee or something. Once it's done you should see something like...</p>
+
+<!-- 19 result of end of git push -->
+
+<a href="images/article11/image19.jpg" class="image featured"><img src="images/article11/image19.jpg" alt="" /></a>
+
+<p>Notice, it says <b>https://guarded-brook-64454.herokuapp.com/</b> deployed to Heroku. This means if we go to <a href="https://guarded-brook-64454.herokuapp.com/">https://guarded-brook-64454.herokuapp.com/</a>, we should see the result of our code - aka our website. Going to this URL...</p>
+
+<!-- 20 URL webpage -->
+
+<a href="images/article11/image20.jpg" class="image featured"><img src="images/article11/image20.jpg" alt="" /></a>
+
+<p>And we see exactly what we were expecting! If you go to this URL right now, you'll also see this code (as I won't be changing it). If we changed our code, added and committed the changes, and pushed the altered code up to this Heroku application, we would see something different (our altered app). That's it for this tutorial! Check back next Friday for another post.</p>
+
+<a href="images/article9/heroku_pinnable.png" classd="image featured"><img src="images/article9/heroku_pinnable.png" alt="" /></a>
+
+<!-- Extra Content -->
+
+<div class="row main-row remember-row">
+<div class="6u 12u(mobile)">
+			<h4>Things to Remember:</h4>
+
+<pre><code>&lt;!-- Package.json -->
+- This file holds the metadata for our application.
+- All metadata is held within a JSON object.
+- This also holds the dependencies that npm install will download.
+
+&lt;!-- Back-End Files -->
+- package.json
+- Procfile
+- server.js</code></pre>
+</div>
+
+<div class="6u 12u(mobile)">
+			<h4>Plus a Little Extra:</h4>
+
+			<pre><code>&lt;!-- More on Heroku Command Line-->
+https://devcenter.heroku.com/articles/heroku-command-line
+
+&lt;!-- What are Node.js, Express, and Procfile? -->
+Node.js - a platform that allows us to write our back-end in JavaScript
+Express.js - a Node.js framework that makes writing our back-end easier
+Procfile - allows us to declare what commands should be run by Herkou - 
+		   here we are running a web application with Node.js that starts
+		   with the server.js file. 
+</code></pre>
+</div>
+</div>
+
+<h4 style="text-align: center">YouTube Video</h4>
+
+<div class="container">
+<iframe src="https://www.youtube.com/embed/rs8MbeCMeP8" 
+frameborder="0" allowfullscreen class="video"></iframe>
+</div>
+<br>
+
+<p><a href="http://www.github.com/blondiebits/code-in-5">Code</a> from this blog post</p>
+
+
+
+

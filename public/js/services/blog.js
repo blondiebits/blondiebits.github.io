@@ -198,9 +198,26 @@ app.factory('blog',[function() {
 		date: "Friday, September 16",
 	}
 
+	var post11 = {
+
+		title: "Heroku Hosting: Put your Website on the Cloud",
+
+		subtitle: "Get your Angular website on the Internet with Heroku. Write a Node.js backend, use the command line, and more!",
+
+		author: "Kathryn Hodge",
+
+		author_image: kathryn_image,
+
+		author_description: "Software Developer // Hacker // Tech Evangalist",
+
+		author_bio: "bio/kathryn_bio.html",
+
+		date: "Friday, September 23",
+	}
+
 
 	return {
-		posts : [post9, post8, post7, post6, post5, post4, post3, post2, post1, post0]
+		posts : [post11, post10, post9, post8, post7, post6, post5, post4, post3, post2, post1, post0]
 	}
 
 }])
