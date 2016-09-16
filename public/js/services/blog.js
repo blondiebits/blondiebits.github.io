@@ -217,7 +217,7 @@ app.factory('blog',[function() {
 
 
 	return {
-		posts : [post11, post10, post9, post8, post7, post6, post5, post4, post3, post2, post1, post0]
+		posts : [post10, post9, post8, post7, post6, post5, post4, post3, post2, post1, post0]
 	}
 
 }])
